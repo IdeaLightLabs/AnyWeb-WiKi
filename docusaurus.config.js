@@ -72,12 +72,6 @@ const config = {
                 items: [
                     {
                         type: 'doc',
-                        docId: 'anyweb',
-                        position: 'left',
-                        label: '介绍',
-                    },
-                    {
-                        type: 'doc',
                         docId: 'intro',
                         position: 'left',
                         label: '文档',
