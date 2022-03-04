@@ -89,6 +89,20 @@ provider.request({
 })
 
 /**
+ * 导入账户地址到钱包
+ * @return {string} success
+ * @return {string} fail
+ */
+provider.request({
+    method: 'anyweb_importAddress',
+    params: [
+        {
+            address: ['cfx:xxxxxx', 'cfx:xxxxxx']
+        }
+    ]
+})
+
+/**
  * 启动AnyWeb首页
  * @return {void}
  */

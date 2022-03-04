@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.6](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.0.5...v1.0.6) (2022-03-02)
+
+
+### Features
+
+* **support import read-only account:** support import account from DApp by SDK without key ([7562c1f](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/7562c1f03a7494022acc419389713de0ae93a710))
+
+
+### Bug Fixes
+
+* **rolling penetration:** fixed rolling penetration when open the iframe second time ([2f91490](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/2f91490306420238ae006d7f1393b850f06ccc8a))
+
+### [1.0.5](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.0.4...v1.0.5) (2022-02-23)
+
+
+### Bug Fixes
+
+* **iOS scroll penetration:** fix the iOS scroll penetration and remove the release.yml ([eb4d4ce](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/eb4d4ce538543df97fd8064b1b2043688091ffb9))
+* **safari page auto reload:** fixed Safari auto refresh and other issues ([b83ca43](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/b83ca4351684edaac8d13ca79afab6455b4a1ca5))
+* **user cancel error:** fix the error of cancel auth, and optimize DApp interactive experience ([fafbd47](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/fafbd47e8c8ea8e4463f7149abfe627fb8127c21))
+
+### [1.0.4](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.0.3...v1.0.4) (2022-02-22)
+
+
+### Bug Fixes
+
+* **optimize iframe and example DApp:** optimize the iframe experience and fix some bug in example ([d83bccc](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/d83bcccdf556f492ee397a6eb7fa2c1d1c0c5b57))
+
+### [1.0.3](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.0.2...v1.0.3) (2022-02-21)
+
+### Features
+
+* **call contract example:** add new example of CFX Faucet ([1975b26](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/1975b26ed9841e6f55a9946d038c35bac7c0fa3d))
+* **closable iframe:** iframe closeable ([28c0a66](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/28c0a6696a7e056e6b6e15a9e69fb413bf62c69e))
+
+
+### Bug Fixes
+
+* **iframe:** fix the iframe too height ([5b88f26](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/5b88f26b228c5d6f9d87f8a8847ca74481e3afd4))
+
 ### [1.0.1](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.0.0...v1.0.1) (2022-02-18)
 
 
