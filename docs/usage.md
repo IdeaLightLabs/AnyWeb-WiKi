@@ -24,7 +24,7 @@ provider.request({
 
 当需要进行签名交易时，调用 `cfx_sendTransaction` 并传入交易参数即可。
 
-如发起CFX转账交易：
+如发起CFX转账交易: 
 
 ```javascript
 /**
@@ -76,7 +76,7 @@ provider.request({
 
 ### 调用合约
 
-当需要调用合约方法时候，通过调用 `cfx_sendTransaction` 并将参数 `to` 设置为合约地址及 `data` 设置为调用合约的数据即可
+当需要调用合约方法时候，通过调用 `cfx_sendTransaction` 并将参数 `to` 设置为合约地址及 `data` 设置为调用合约的数据即可。
 
 ```javascript
 /**
@@ -105,12 +105,12 @@ provider.request({
 
 导入账户分为两类:
 
-* **导入地址**: 只导入该地址的账户信息，不导入该地址的私钥，可以查看改地址信息但无法进行链上操作。
-* **导入私钥**：导入私钥，可以查看该地址信息，可以进行链上操作。
+* **导入地址**: 只导入该地址的账户信息，不导入该地址的私钥，可以查看该地址信息但无法进行链上操作。
+* **导入私钥**: 导入私钥，可以查看该地址信息，可以进行链上操作。
 
 #### 导入地址
 
-导入地址时参数只需要传入 `address` 即可：
+导入地址时参数只需要传入 `address` 即可: 
 
 ```javascript
 /**
@@ -129,9 +129,9 @@ provider.request({
 })
 ```
 
-#### 导入私钥
+#### 导入私钥 
 
-导入私钥时参数只需要传入 `privateKey` 即可：
+导入私钥时参数只需要传入 `privateKey` 即可: 
 
 ```javascript
 /**
@@ -170,7 +170,7 @@ provider.request({
 
 ### 启动 AnyWeb
 
-启动 AnyWeb 的首页
+启动 AnyWeb 的首页。
 
 ```javascript
 /**
