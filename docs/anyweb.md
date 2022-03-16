@@ -72,7 +72,7 @@ AnyWeb 采用 **Multi-Sig 门限密钥分片**、**分布式私钥托管**、**M
 
 Multi-Sig 门限密钥分片是一种将单一密钥分片**若干份随机密钥共享**的技术。
 <p style={{textAlign: 'center'}}><img alt=""
-src="https://idealight.feishu.cn/space/api/box/stream/download/asynccode/?code=NmFlNDIxNTc4YjE2Y2Y1OTczMDdjZDk1ZDhiNjM4OWVfeG81Rmc0bm9XSWVicENlUnpzZ0RtbVM5Y1Z5czRiUHVfVG9rZW46Ym94Y25XMEpSRjZkWkJ0NzVZRVVHMEpZbW1iXzE2NDczOTU4NzY6MTY0NzM5OTQ3Nl9WNA"/></p>
+src="https://anyweb.oss-cn-hangzhou.aliyuncs.com/anyweb/80e29b9d-0e44-412f-9026-9c73b13ad5a2.png"/></p>
 
 区块链中密码学的机制设计决定了私钥在用户资产安全中的重要地位，在密码学研究中，“如何提供冗余的抗风险密钥管理方案”是一个历史悠久的研究课题，RSA 发明人之一 Shamir 在 1979 年提出了 Shamir's Secret
 Sharing 门限密钥共享技术，通过利用多项式插值（polynomial interpolation）的方式将密钥分为 n 份密钥共享，**只有集齐超过 k 个密钥份额，才能够将密钥恢复**。
@@ -92,8 +92,9 @@ Multi-Sig 门限密钥分片技术能够解决密钥的单点泄漏风险。同�
 MPC 多方安全计算（Secure Muti-Party Computation）是由现代计算机密码学奠基人、图灵奖得主姚期智于 1986 年提出的**解决一组互不信任的参与方之间在保护隐私信息以及没有可信第三方的前提下协同计算问题**
 的理论框架。
 
+
 <p style={{textAlign: 'center'}}><img alt=""
-src="https://idealight.feishu.cn/space/api/box/stream/download/asynccode/?code=YTE2ZmIyYmU0ODg2NjRiZjA3NmMyM2U3ODQ5ZTM3ZGVfVGFab2tXMTlCSlpsSmdkUzRUZmdzS3YwY1RWZE5STDhfVG9rZW46Ym94Y244NUw1Wkk4UkxlRTZQUExYR0NqcmZkXzE2NDczOTU4NzY6MTY0NzM5OTQ3Nl9WNA"/></p>
+src="https://anyweb.oss-cn-hangzhou.aliyuncs.com/anyweb/eef93bd9-3c66-47b3-acd1-aae976a9edbf.png"/></p>
 
 简单来讲，如果没有 MPC 理论，为了能够使用完整私钥进行区块链交易签名，AnyWeb 必须将利用 Multi-Sig 门限密钥分片技术获得的多份密钥共享在运行内存中进行短暂合成，恢复出完整私钥并使用 ECDSA
 进行椭圆曲线签名。这意味着用户的私钥在某个时刻，会以完整明文的方式短暂地在内存中出现，**即便对于黑客而言，在大量的动态内存数据中、在 ns 级时间的有效窗口中获取到这一数据是十分困难的事情，我们仍然认为这样的安全级别是不充分的**。
@@ -108,7 +109,7 @@ WASM 可信隔离沙盒是 AnyWeb 基于浏览器 WebAssembly 技术构建的用
 WebAssembly 是一种在浏览器中直接运行编译后二进制程序的技术，同时，WebAssembly 无法访问内存中的任何其他 JavaScript 对象，这对于安全性而言非常重要。
 
 <p style={{textAlign: 'center'}}><img alt=""
-src="https://idealight.feishu.cn/space/api/box/stream/download/asynccode/?code=MDI4NTQxNTFiMmJlZWI4Mjg3MDk5OGZkMGRlZWUxOGJfNVdRSEZhN3FsSVFKZmh2a2hzanEyUXRzNGpIbnYzdHJfVG9rZW46Ym94Y25HU3ZGaDdFQVNCQk9zNWJqcTFNWld2XzE2NDczOTU4NzY6MTY0NzM5OTQ3Nl9WNA"/></p>
+src="https://anyweb.oss-cn-hangzhou.aliyuncs.com/anyweb/ff2e70c7-7d3d-4a82-944e-9507fcc2217c.png"/></p>
 
 H5 上级执行环境是不可信的，在一般的钓鱼 WebView 场景下，涉及机密数据的密码学运算如果运行在 JavaScript 上下文中，黑客可以轻松地获取中间过程的任一运算结果，中间算法也将悉数暴露，这意味着黑客很容易执行钓鱼攻击的自动化。
 
