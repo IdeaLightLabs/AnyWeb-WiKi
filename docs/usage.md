@@ -6,6 +6,8 @@
 
 在开始使用之前，需要获取地址授权，以获取到用户的地址信息。
 
+可以通过在参数中传入 `availableNetwork` 参数来限定可以选择的网络。
+
  ```javascript
 /**
  * 获取账户授权
@@ -13,6 +15,21 @@
  */
 provider.request({
     method: 'cfx_accounts',
+}).then((result) => {
+    console.log('账户地址列表', result)
+}).catch((e) => {
+    console.error('调用失败', e)
+})
+
+/**
+ * 指定网络的获取账户授权
+ * @return {string[]} 账户地址列表 ['cfx:xxxxxx', 'cfx:xxxxxx']
+ */
+provider.request({
+    method: 'cfx_accounts',
+    params: [{
+        availableNetwork: [1029],
+    }]
 }).then((result) => {
     console.log('账户地址列表', result)
 }).catch((e) => {
