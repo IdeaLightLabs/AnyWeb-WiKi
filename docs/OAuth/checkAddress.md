@@ -32,6 +32,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 | accessToken  | String | 上一步获取的 `accessToken`
 | unionid | String | 上一步获取的 `unionid`
 | address | String | 地址
+| secret  | String | 从 open.anyweb.cc 拿到的 `secret`
 
 #### 返回值
 
@@ -63,7 +64,8 @@ const options = {
         'appid': '从open.anyweb.cc拿到的appid',
         'accessToken': '上一步获取的accessToken',
         'unionid': '上一步获取的unionid',
-        'address': 'cfx:xxxxxx'
+        'address': 'cfx:xxxxxx',
+        'secret': '从open.anyweb.cc拿到的secret'
     }
 };
 request(options, function (error, response) {
@@ -82,7 +84,8 @@ response = requests.request("POST", "https://api.anyweb.cc/oauth/checkAddress", 
     'appid': '从open.anyweb.cc拿到的appid',
     'accessToken': '上一步获取的accessToken',
     'unionid': '上一步获取的unionid',
-    'address': 'cfx:xxxxxx'
+    'address': 'cfx:xxxxxx',
+    'secret': '从open.anyweb.cc拿到的secret'
 })
 print(response.text)
 ```
@@ -105,6 +108,7 @@ public class main {
                 .addFormDataPart("accessToken", "上一步获取的accessToken")
                 .addFormDataPart("unionid", "上一步获取的unionid")
                 .addFormDataPart("address", "cfx:xxxxxx")
+                .addFormDataPart("secret", "从open.anyweb.cc拿到的secret")
                 .build();
         Request request = new Request.Builder()
                 .url("https://api.anyweb.cc/oauth/checkAddress")

@@ -50,6 +50,7 @@ AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的�
 | appid  | String | 从 open.anyweb.cc 拿到的 `appid`
 | accessToken  | String | 上一步获取的 `accessToken`
 | unionid | String | 上一步获取的 `unionid`
+| secret  | String | 从 open.anyweb.cc 拿到的 `secret`
 
 #### 返回值
 
@@ -88,7 +89,8 @@ const options = {
     formData: {
         'appid': '从open.anyweb.cc拿到的appid',
         'accessToken': '上一步获取的accessToken',
-        'unionid': '上一步获取的unionid'
+        'unionid': '上一步获取的unionid',
+        'secret': '从open.anyweb.cc拿到的secret'
     }
 };
 request(options, function (error, response) {
@@ -106,7 +108,8 @@ import requests
 response = requests.request("POST", "https://api.anyweb.cc/oauth/userInfo", data={
     'appid': '从open.anyweb.cc拿到的appid',
     'accessToken': '上一步获取的accessToken',
-    'unionid': '上一步获取的unionid'
+    'unionid': '上一步获取的unionid',
+    'secret': '从open.anyweb.cc拿到的secret'
 })
 print(response.text)
 ```
@@ -128,6 +131,7 @@ public class main {
                 .addFormDataPart("appid", "从open.anyweb.cc拿到的appid")
                 .addFormDataPart("accessToken", "上一步获取的accessToken")
                 .addFormDataPart("unionid", "上一步获取的unionid")
+                .addFormDataPart("appid", "从open.anyweb.cc拿到的appid")
                 .build();
         Request request = new Request.Builder()
                 .url("https://api.anyweb.cc/oauth/userInfo")

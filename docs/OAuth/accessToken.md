@@ -62,6 +62,7 @@ DApp 拿到了 `code` 后，后端需要自行通过 POST 请求指定接口换�
 |  ----  | ----  | ---- 
 | appid  | String | 从 open.anyweb.cc 拿到的 `appid`
 | code  | String | 上一步获取的 `code`
+| secret  | String | 从 open.anyweb.cc 拿到的 `secret`
 
 #### 返回值
 
@@ -95,7 +96,8 @@ const options = {
     'url': 'https://api.anyweb.cc/oauth/accessToken',
     formData: {
         'appid': '从open.anyweb.cc拿到的appid',
-        'code': '上一步获取的code'
+        'code': '上一步获取的code',
+        'secret': '从open.anyweb.cc拿到的secret'
     }
 };
 request(options, function (error, response) {
@@ -112,7 +114,8 @@ import requests
 
 response = requests.request("POST", "https://api.anyweb.cc/oauth/accessToken", data={
     'appid': '从open.anyweb.cc拿到的appid',
-    'code': '上一步获取的code'
+    'code': '上一步获取的code',
+    'secret': '从open.anyweb.cc拿到的secret'
 })
 print(response.text)
 ```
@@ -133,6 +136,7 @@ public class main {
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("appid", "从open.anyweb.cc拿到的appid")
                 .addFormDataPart("code", "上一步获取的code")
+                .addFormDataPart("secret", "从open.anyweb.cc拿到的secret")
                 .build();
         Request request = new Request.Builder()
                 .url("https://api.anyweb.cc/oauth/accessToken")
