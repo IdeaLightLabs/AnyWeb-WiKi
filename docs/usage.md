@@ -206,3 +206,23 @@ provider.request({
     console.error('调用失败', e)
 })
 ```
+
+### 获取 OAuth Code
+
+> 注意：务必在获取到用户地址授权后执行，否则将抛出错误。
+
+获取用户的 OAuth Code，用于获取用户信息。
+
+```javascript
+/**
+ * 获取 OAuth Code
+ * @return {string} code 'xxxxxx-xxxx-xxxx-xxx-xxxxxxx'
+ */
+provider.request({
+    method: 'anyweb_oauth',
+}).then((result) => {
+    console.log('OAuth Code', result)
+}).catch((e) => {
+    console.error('获取失败', e)
+})
+```

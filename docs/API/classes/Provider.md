@@ -29,6 +29,7 @@ const provider = new Provider()
 - [events](Provider.md#events)
 - [logger](Provider.md#logger)
 - [networkId](Provider.md#networkid)
+- [oauthToken](Provider.md#oauthtoken)
 - [url](Provider.md#url)
 
 ### Methods
@@ -54,7 +55,7 @@ const provider = new Provider()
 
 #### Defined in
 
-[provider.ts:44](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L44)
+[provider.ts:45](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L45)
 
 ## Properties
 
@@ -64,7 +65,7 @@ const provider = new Provider()
 
 #### Defined in
 
-[provider.ts:31](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L31)
+[provider.ts:31](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L31)
 
 ___
 
@@ -74,7 +75,7 @@ ___
 
 #### Defined in
 
-[provider.ts:30](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L30)
+[provider.ts:30](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L30)
 
 ___
 
@@ -84,7 +85,7 @@ ___
 
 #### Defined in
 
-[provider.ts:33](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L33)
+[provider.ts:34](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L34)
 
 ___
 
@@ -105,7 +106,7 @@ ___
 
 #### Defined in
 
-[provider.ts:35](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L35)
+[provider.ts:36](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L36)
 
 ___
 
@@ -115,7 +116,7 @@ ___
 
 #### Defined in
 
-[provider.ts:29](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L29)
+[provider.ts:29](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L29)
 
 ___
 
@@ -125,7 +126,17 @@ ___
 
 #### Defined in
 
-[provider.ts:32](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L32)
+[provider.ts:33](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L33)
+
+___
+
+### oauthToken
+
+• `Optional` **oauthToken**: `string` = `undefined`
+
+#### Defined in
+
+[provider.ts:32](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L32)
 
 ___
 
@@ -135,7 +146,7 @@ ___
 
 #### Defined in
 
-[provider.ts:34](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L34)
+[provider.ts:35](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L35)
 
 ## Methods
 
@@ -157,7 +168,7 @@ Deprecated: use `request` instead
 
 #### Defined in
 
-[provider.ts:84](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L84)
+[provider.ts:85](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L85)
 
 ___
 
@@ -173,7 +184,7 @@ Deprecated: use `request` instead
 
 #### Defined in
 
-[provider.ts:117](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L117)
+[provider.ts:118](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L118)
 
 ___
 
@@ -203,7 +214,7 @@ IProvider.on
 
 #### Defined in
 
-[provider.ts:223](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L223)
+[provider.ts:249](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L249)
 
 ___
 
@@ -226,7 +237,7 @@ Submits an RPC request
 
 #### Defined in
 
-[provider.ts:129](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L129)
+[provider.ts:130](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L130)
 
 ___
 
@@ -255,7 +266,7 @@ IProvider.request
 
 #### Defined in
 
-[provider.ts:100](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L100)
+[provider.ts:101](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L101)
 
 ___
 
@@ -277,4 +288,4 @@ Deprecated: use `request` instead
 
 #### Defined in
 
-[provider.ts:72](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/7562c1f/src/provider.ts#L72)
+[provider.ts:73](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/blob/bcdd0a9/src/provider.ts#L73)
