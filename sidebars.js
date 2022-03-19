@@ -33,11 +33,15 @@ const sidebars = {
     {
       type: 'category',
       label: 'OAuth',
-      items: ['OAuth/intro',
+      items: [{
+        type: 'category',
+        label: '开始',
+        items: ['OAuth/intro', 'OAuth/accessToken'],
+      },
         {
           type: 'category',
           label: '接口',
-          items: ['OAuth/userInfo'],
+          items: ['OAuth/userInfo', 'OAuth/checkAddress'],
         }],
     },
     {
