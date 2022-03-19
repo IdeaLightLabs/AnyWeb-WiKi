@@ -1,5 +1,7 @@
 # 获取 AccessToken
 
+import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
+
 ## 基本介绍
 
 AccessToken 是用户授权后的凭证，用于调用其他 OAuth API。
