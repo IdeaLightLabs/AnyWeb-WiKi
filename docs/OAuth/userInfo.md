@@ -23,7 +23,7 @@ AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的�
 
 ### 获取 Access Token
 
-见[获取 Access Token](https://wiki.anyweb.cc/docs/OAuth/intro)
+见[获取 Access Token](https://wiki.anyweb.cc/docs/OAuth/accessToken)
 
 ### 获取用户信息
 

@@ -10,7 +10,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 ### 获取 Access Token
 
-见[获取 Access Token](https://wiki.anyweb.cc/docs/OAuth/intro)
+见[获取 Access Token](https://wiki.anyweb.cc/docs/OAuth/accessToken)
 
 ### 检查用户地址
 
