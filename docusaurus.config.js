@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'AnyWeb JS SDK Wiki',
+    title: 'AnyWeb Wiki',
     tagline: '强合规的区块链钱包',
     url: 'https://anyweb.cc',
     baseUrl: '/',

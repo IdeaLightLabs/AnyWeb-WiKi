@@ -1,4 +1,4 @@
-[@idealight-labs/anyweb-js-sdk](../README.md) / [Exports](../modules.md) / Provider
+[@idealight-labs/anyweb-js-sdk](https://wiki.anyweb.cc/docs) / Exports / Provider
 
 # Class: Provider
 
