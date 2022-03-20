@@ -63,7 +63,7 @@ const config = {
                  //... other Algolia params
              },*/
             navbar: {
-                title: 'AnyWeb WiKi',
+                title: 'AnyWeb 开发文档',
                 logo: {
                     alt: 'My Site Logo',
                     src: 'img/logo.svg',
