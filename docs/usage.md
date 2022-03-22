@@ -2,11 +2,25 @@
 
 ## Conflux
 
-### 获取地址授权
+### 获取授权
 
-在开始使用之前，需要获取地址授权，以获取到用户的地址信息。
+在开始使用之前，需要获取授权，以获取到用户的地址等信息。
 
-可以通过在参数中传入 `availableNetwork` 参数来限定可以选择的网络。也可在参数中传入 `scopes` 参数来指定请求的授权的信息并获取 `OAuth Code`，如果不传入 `scopes` 参数将仅返回地址信息。
+可选参数:
+
+* `availableNetwork`: 限定可以选择的网络。
+* `scopes`: 指定请求的授权的信息，有以下可选值：
+  * `baseInfo`: 获取基本信息，包括地址、名称和头像等。
+  * `real identity`: 授权获取手机号等信息。
+
+:::caution 注意
+
+如果不传入 `scopes` 参数，则默认授权获取基本信息，并且返回的参数仅有地址列表。
+
+一旦传入 `scopes` 参数就会返回地址列表、`OAuth Code` 和授权范围。 其中，`OAuth Code` 用于后端获取 `AccessToken`
+再获取用户信息，具体请见 [OAuth](https://wiki.anyweb.cc/docs/OAuth/intro) 。
+
+:::
 
  ```javascript
 /**
@@ -14,9 +28,9 @@
  * @return {string[]} 账户地址列表 ['cfx:xxxxxx', 'cfx:xxxxxx']
  */
 provider.request({
-    method: 'cfx_accounts',
+  method: 'cfx_accounts',
 }).then((result) => {
-    console.log('账户地址列表', result)
+  console.log('账户地址列表', result)
 }).catch((e) => {
     console.error('调用失败', e)
 })
