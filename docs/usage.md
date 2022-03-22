@@ -6,7 +6,7 @@
 
 在开始使用之前，需要获取地址授权，以获取到用户的地址信息。
 
-可以通过在参数中传入 `availableNetwork` 参数来限定可以选择的网络。
+可以通过在参数中传入 `availableNetwork` 参数来限定可以选择的网络。也可在参数中传入 `scopes` 参数来指定请求的授权的信息并获取 `OAuth Code`，如果不传入 `scopes` 参数将仅返回地址信息。
 
  ```javascript
 /**
@@ -32,6 +32,27 @@ provider.request({
     }]
 }).then((result) => {
     console.log('账户地址列表', result)
+}).catch((e) => {
+    console.error('调用失败', e)
+})
+
+/**
+ * 指定授权类型
+ * @return {object} 账户地址列表和 OAuth Code 等信息 {
+ *     address: ['cfx:xxxxxx', 'cfx:xxxxxx'],
+ *     code: 'xxxxx-xxxx-xxxx-xxxx-xxxxx',
+ *     scopes: ['baseinfo']
+ * }
+ */
+provider.request({
+    method: 'cfx_accounts',
+    params: [{
+        availableNetwork: [1029],
+        scopes: ['baseinfo']
+    }]
+}).then((result) => {
+    const {address, code, scopes} = result
+    console.log("用户地址", address, "OAuth Code", code, "Scope", scopes)
 }).catch((e) => {
     console.error('调用失败', e)
 })
@@ -207,21 +228,19 @@ provider.request({
 })
 ```
 
-### 获取 OAuth Code
+### 退出登录
 
-> 注意：务必在获取到用户地址授权后执行，否则将抛出错误。
-
-获取用户的 OAuth Code，用于获取用户信息。
+切换到其他地址进行重新授权。
 
 ```javascript
 /**
- * 获取 OAuth Code
- * @return {string} code 'xxxxxx-xxxx-xxxx-xxx-xxxxxxx'
+ * 退出登录
+ * @return {string} 'success'
  */
 provider.request({
-    method: 'anyweb_oauth',
+    method: 'anyweb_logout',
 }).then((result) => {
-    console.log('OAuth Code', result)
+    console.log('result', result)
 }).catch((e) => {
     console.error('获取失败', e)
 })
