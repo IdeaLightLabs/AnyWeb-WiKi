@@ -10,7 +10,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 ### 获取 ServiceToken
 
-见[获取 ServiceToken](https://wiki.anyweb.cc/docs/Open/ServiceToken)
+见[获取 ServiceToken](https://wiki.anyweb.cc/docs/service/ServiceToken)
 
 ### 检查用户地址
 
@@ -20,7 +20,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 | 标题   | 内容                                      |
 |------|-----------------------------------------|
-| 地址   | https://api.anyweb.cc/open/checkAddress |
+| 地址   | https://api.anyweb.cc/service/checkAddress |
 | 方法   | POST                                    |
 | 频率限制 | 每天 **5000000** 次                        |
 
@@ -57,7 +57,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 const request = require('request');
 const options = {
     'method': 'POST',
-    'url': 'https://api.anyweb.cc/open/checkAddress',
+    'url': 'https://api.anyweb.cc/service/checkAddress',
     formData: {
         'serviceToken': 'serviceToken',
         'unionid': 'unionid',
@@ -76,7 +76,7 @@ request(options, function (error, response) {
 ```py
 import requests
 
-response = requests.request("POST", "https://api.anyweb.cc/open/checkAddress", data={
+response = requests.request("POST", "https://api.anyweb.cc/service/checkAddress", data={
     'serviceToken': 'serviceToken',
     'unionid': 'unionid',
     'address': 'cfx:xxxxxx'
@@ -103,7 +103,7 @@ public class main {
                 .addFormDataPart("address", "cfx:xxxxxx")
                 .build();
         Request request = new Request.Builder()
-                .url("https://api.anyweb.cc/open/checkAddress")
+                .url("https://api.anyweb.cc/service/checkAddress")
                 .method("POST", body)
                 .build();
         Response response = client.newCall(request).execute();

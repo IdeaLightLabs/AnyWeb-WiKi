@@ -16,7 +16,7 @@ ServiceToken 是开放平台相关接口的调用凭证。
 
 | 标题   | 内容                                      |
 |------|-----------------------------------------|
-| 地址   | https://api.anyweb.cc/open/serviceToken |
+| 地址   | https://api.anyweb.cc/service/serviceToken |
 | 方法   | POST                                    |
 
 #### 具体参数内容
@@ -53,7 +53,7 @@ ServiceToken 是开放平台相关接口的调用凭证。
 const request = require('request');
 const options = {
     'method': 'POST',
-    'url': 'https://api.anyweb.cc/open/serviceToken',
+    'url': 'https://api.anyweb.cc/service/serviceToken',
     formData: {
         'appid': '从open.anyweb.cc拿到的appid',
         'secret': '从open.anyweb.cc拿到的secret'
@@ -71,7 +71,7 @@ request(options, function (error, response) {
 ```py
 import requests
 
-response = requests.request("POST", "https://api.anyweb.cc/open/serviceToken", data={
+response = requests.request("POST", "https://api.anyweb.cc/service/serviceToken", data={
     'appid': '从open.anyweb.cc拿到的appid',
     'secret': '从open.anyweb.cc拿到的secret'
 })
@@ -96,7 +96,7 @@ public class main {
                 .addFormDataPart("secret", "从open.anyweb.cc拿到的secret")
                 .build();
         Request request = new Request.Builder()
-                .url("https://api.anyweb.cc/open/serviceToken")
+                .url("https://api.anyweb.cc/service/serviceToken")
                 .method("POST", body)
                 .build();
         Response response = client.newCall(request).execute();
