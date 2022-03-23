@@ -41,7 +41,21 @@ const sidebars = {
         {
           type: 'category',
           label: '接口',
-          items: ['OAuth/userInfo', 'OAuth/checkAddress'],
+          items: ['OAuth/userInfo'],
+        }],
+    },
+    {
+      type: 'category',
+      label: '开放平台',
+      items: [{
+        type: 'category',
+        label: '开始',
+        items: ['Open/intro', 'Open/serviceToken'],
+      },
+        {
+          type: 'category',
+          label: '接口',
+          items: ['Open/userInfo', 'Open/checkAddress'],
         }],
     },
     {

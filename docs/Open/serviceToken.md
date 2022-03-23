@@ -1,51 +1,45 @@
-# 用户地址检查
+# 获取 ServiceToken
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 ## 基本介绍
 
-检查账户地址是否属于该用户。
+ServiceToken 是开放平台相关接口的调用凭证。
 
 ## 具体过程
 
-### 获取 Access Token
+### 获取 ServiceToken
 
-见[获取 Access Token](https://wiki.anyweb.cc/docs/OAuth/accessToken)
-
-### 检查用户地址
-
-后端拿到 `accessToken` 后，再请求检查用户地址。
+在[开放平台](https://open.anyweb.cc)注册并登录账号后，创建完成应用后，可以获取到 `appid` 和 `secret` 两个字段。
 
 #### 请求信息
 
-|  标题   | 内容  |
-|  ----  | ----  |
-| 地址  | https://api.anyweb.cc/oauth/checkAddress |
-| 方法  | POST |
-| 频率限制  | 每天 **5000000** 次 |
+| 标题   | 内容                                      |
+|------|-----------------------------------------|
+| 地址   | https://api.anyweb.cc/open/serviceToken |
+| 方法   | POST                                    |
 
 #### 具体参数内容
 
-|  参数名   | 类型  | 备注
-|  ----  | ----  | ---- 
-| appid  | String | 从 open.anyweb.cc 拿到的 `appid`
-| accessToken  | String | 上一步获取的 `accessToken`
-| unionid | String | 上一步获取的 `unionid`
-| address | String | 地址
-| secret  | String | 从 open.anyweb.cc 拿到的 `secret`
+| 参数名    | 类型     | 备注                            |
+|--------|--------|-------------------------------|
+| appid  | String | 从 open.anyweb.cc 拿到的 `appid`  |
+| secret | String | 从 open.anyweb.cc 拿到的 `secret` |
 
 #### 返回值
 
-|  参数名   | 类型  | 备注
-|  ----  | ----  | ---- 
-| res  | Bool | 地址是否属于改账户
+| 参数名          | 类型     | 备注                  |
+|--------------|--------|---------------------|
+| serviceToken | String | 换取到的 `serviceToken` |
+| expiresIn    | Number | `serviceToken` 有效时间 |
 
 ```json
 {
   "code": 1000,
   "message": "success",
   "data": {
-    "res": true
+    "serviceToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXQtYWI0OS03M2QxZDg5OTA5OTkiLCJkZXZlbG9wZXJJZCI6MzIsImlhdCI6MTY0XXXXXXXXXXXXXXXXXXXXXXXXXXX.4--P506OLFFZ-8YN9i1FnjdtmdHMHEsHn_E_XXXXXX",
+    "expiresIn": 7200
   }
 }
 ```
@@ -59,12 +53,9 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 const request = require('request');
 const options = {
     'method': 'POST',
-    'url': 'https://api.anyweb.cc/oauth/checkAddress',
+    'url': 'https://api.anyweb.cc/open/serviceToken',
     formData: {
         'appid': '从open.anyweb.cc拿到的appid',
-        'accessToken': '上一步获取的accessToken',
-        'unionid': '上一步获取的unionid',
-        'address': 'cfx:xxxxxx',
         'secret': '从open.anyweb.cc拿到的secret'
     }
 };
@@ -80,11 +71,8 @@ request(options, function (error, response) {
 ```py
 import requests
 
-response = requests.request("POST", "https://api.anyweb.cc/oauth/checkAddress", data={
+response = requests.request("POST", "https://api.anyweb.cc/open/serviceToken", data={
     'appid': '从open.anyweb.cc拿到的appid',
-    'accessToken': '上一步获取的accessToken',
-    'unionid': '上一步获取的unionid',
-    'address': 'cfx:xxxxxx',
     'secret': '从open.anyweb.cc拿到的secret'
 })
 print(response.text)
@@ -105,13 +93,10 @@ public class main {
         MediaType mediaType = MediaType.parse("text/plain");
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("appid", "从open.anyweb.cc拿到的appid")
-                .addFormDataPart("accessToken", "上一步获取的accessToken")
-                .addFormDataPart("unionid", "上一步获取的unionid")
-                .addFormDataPart("address", "cfx:xxxxxx")
                 .addFormDataPart("secret", "从open.anyweb.cc拿到的secret")
                 .build();
         Request request = new Request.Builder()
-                .url("https://api.anyweb.cc/oauth/checkAddress")
+                .url("https://api.anyweb.cc/open/serviceToken")
                 .method("POST", body)
                 .build();
         Response response = client.newCall(request).execute();
@@ -123,5 +108,3 @@ public class main {
 
 </TabItem>
 </Tabs>
-
-

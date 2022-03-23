@@ -8,8 +8,8 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 开发者获取用户相关信息时，需要以下步骤：
 
-1. 获取 `accessToken`
-2. 通过 `accessToken` 和 `unionid` 获取具体用户信息
+1. 获取 `serviceToken`
+2. 通过 `serviceToken` 和 `unionid` 获取具体用户信息
 
 ### 信息分级
 
@@ -21,9 +21,9 @@ AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的�
 
 ## 具体过程
 
-### 获取 Access Token
+### 获取 ServiceToken
 
-见[获取 Access Token](https://wiki.anyweb.cc/docs/OAuth/accessToken)
+见[获取 ServiceToken](https://wiki.anyweb.cc/docs/Open/ServiceToken)
 
 ### 获取用户信息
 
@@ -33,22 +33,21 @@ AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的�
 
 :::
 
-后端拿到 `accessToken` 后，再请求获取用户信息接口即可获取到用户具体信息。
+后端拿到 `ServiceToken` 后，再请求获取用户信息接口即可获取到用户具体信息。
 
 #### 请求信息
 
-| 标题   | 内容                                   |
-|------|--------------------------------------|
-| 地址   | https://api.anyweb.cc/oauth/userInfo |
-| 方法   | POST                                 |
+| 标题   | 内容                                  |
+|------|-------------------------------------|
+| 地址   | https://api.anyweb.cc/open/userInfo |
+| 方法   | POST                                |
 
 #### 具体参数内容
 
-| 参数名         | 类型     | 备注                            |
-|-------------|--------|-------------------------------|
-| appid       | String | 从 open.anyweb.cc 拿到的 `appid`  |
-| accessToken | String |  `accessToken`          |
-| unionid     | String |  `unionid`              |
+| 参数名          | 类型     | 备注             |
+|--------------|--------|----------------|
+| serviceToken | String | `serviceToken` |
+| unionid      | String | `unionid`      |
 
 #### 返回值
 
@@ -83,10 +82,9 @@ AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的�
 const request = require('request');
 const options = {
     'method': 'POST',
-    'url': 'https://api.anyweb.cc/oauth/userInfo',
+    'url': 'https://api.anyweb.cc/open/userInfo',
     formData: {
-        'appid': '从open.anyweb.cc拿到的appid',
-        'accessToken': 'accessToken',
+        'serviceToken': 'serviceToken',
         'unionid': 'unionid'
     }
 };
@@ -102,9 +100,8 @@ request(options, function (error, response) {
 ```py
 import requests
 
-response = requests.request("POST", "https://api.anyweb.cc/oauth/userInfo", data={
-    'appid': '从open.anyweb.cc拿到的appid',
-    'accessToken': 'accessToken',
+response = requests.request("POST", "https://api.anyweb.cc/open/userInfo", data={
+    'serviceToken': 'serviceToken',
     'unionid': 'unionid'
 })
 print(response.text)
@@ -124,12 +121,11 @@ public class main {
                 .build();
         MediaType mediaType = MediaType.parse("text/plain");
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
-                .addFormDataPart("appid", "从open.anyweb.cc拿到的appid")
-                .addFormDataPart("accessToken", "accessToken")
+                .addFormDataPart("serviceToken", "serviceToken")
                 .addFormDataPart("unionid", "unionid")
                 .build();
         Request request = new Request.Builder()
-                .url("https://api.anyweb.cc/oauth/userInfo")
+                .url("https://api.anyweb.cc/open/userInfo")
                 .method("POST", body)
                 .build();
         Response response = client.newCall(request).execute();
