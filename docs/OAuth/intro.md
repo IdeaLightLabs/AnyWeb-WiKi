@@ -1,5 +1,14 @@
 # 介绍
 
+:::info 提示
+
+AnyWeb 授权是通过 OAuth2.0 机制实现的，在用户授权给 DApp 后，DApp 可以获取到一个网页或 APP 授权特有的接口调用凭证 (accessToken)，通过授权 accessToken
+可以进行授权后接口调用，如获取用户基本信息。 
+
+其他服务接口，需要通过 [Service API](https://wiki.anyweb.cc/docs/Service/intro) 来调用。
+
+:::
+
 ## 名词简介
 
 * **SDK**: 本文中指代 `AnyWeb JS SDK`。

@@ -24,12 +24,24 @@ Features:
 
 ## Docs
 
-* [介绍](https://wiki.anyweb.cc/docs/intro)
-* [快速开始](https://wiki.anyweb.cc/docs/quick_start)
-* [用法](https://wiki.anyweb.cc/docs/usage)
-* [用户信息获取](https://wiki.anyweb.cc/docs/OAuth)
-* [API](https://wiki.anyweb.cc/docs/API/modules)
-    * [Provider](https://wiki.anyweb.cc/docs/API/classes/default)
+* [AnyWeb 介绍](https://wiki.anyweb.cc/docs/anyweb)
+* [AnyWeb JS SDK 介绍](https://wiki.anyweb.cc/docs/intro)
+* [教程](https://wiki.anyweb.cc/docs/quick_start)
+  * [Provider API](https://wiki.anyweb.cc/docs/quick_start)
+    * [快速开始](https://wiki.anyweb.cc/docs/quick_start)
+    * [基本使用](https://wiki.anyweb.cc/docs/usage)
+  * [OAuth API](https://wiki.anyweb.cc/docs/OAuth/intro)
+    * [开始](https://wiki.anyweb.cc/docs/OAuth/intro)
+      * [介绍](https://wiki.anyweb.cc/docs/OAuth/intro)
+      * [获取 AccessToken](https://wiki.anyweb.cc/docs/OAuth/accessToken)
+    * [接口](https://wiki.anyweb.cc/docs/OAuth/userInfo)
+      * [用户信息获取](https://wiki.anyweb.cc/docs/OAuth/userInfo)
+* [服务端 API](https://wiki.anyweb.cc/docs/Service/intro)
+  * [开始](https://wiki.anyweb.cc/docs/Service/intro)
+    * [介绍](https://wiki.anyweb.cc/docs/Service/intro)
+    * [获取 ServiceToken](https://wiki.anyweb.cc/docs/Service/serviceToken)
+  * [接口](https://wiki.anyweb.cc/docs/Service/checkAddress)
+    * [用户地址检查](https://wiki.anyweb.cc/docs/Service/checkAddress)
 * [Release notes](https://wiki.anyweb.cc/docs/CHANGELOG)
 
 前往[ 官网文档 ](https://wiki.anyweb.cc)了解更多

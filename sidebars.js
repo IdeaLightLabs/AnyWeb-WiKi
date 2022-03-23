@@ -56,12 +56,12 @@ const sidebars = {
                     items: [{
                         type: 'category',
                         label: '开始',
-                        items: ['Open/intro', 'Open/serviceToken'],
+                        items: ['Service/intro', 'Service/serviceToken'],
                     },
                         {
                             type: 'category',
                             label: '接口',
-                            items: ['Open/checkAddress'],
+                            items: ['Service/checkAddress'],
                         }],
                 },
 
