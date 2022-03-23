@@ -18,32 +18,32 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 #### 请求信息
 
-| 标题   | 内容                                      |
-|------|-----------------------------------------|
+| 标题   | 内容                                         |
+|------|--------------------------------------------|
 | 地址   | https://api.anyweb.cc/service/checkAddress |
-| 方法   | POST                                    |
-| 频率限制 | 每天 **5000000** 次                        |
+| 方法   | POST                                       |
+| 频率限制 | 每天 **5000000** 次                           |
 
 #### 具体参数内容
 
-| 参数名          | 类型     | 备注                            |
-|--------------|--------|-------------------------------|
-| serviceToken | String | `serviceToken`                |
-| unionid      | String | `unionid`                     |
-| address      | String | 地址                            |
+| 参数名          | 类型       | 备注             |
+|--------------|----------|----------------|
+| serviceToken | String   | `serviceToken` |
+| unionid      | String   | `unionid`      |
+| address      | String[] | 地址列表           |
 
 #### 返回值
 
-| 参数名 | 类型   | 备注        |
-|-----|------|-----------|
-| res | Bool | 地址是否属于该账户 |
+| 参数名 | 类型                       | 备注| 
+|-----|--------------------------|---------------- | 
+| res | Record<String, Bool>     | 键名为地址，键值为布尔值的对象|
 
 ```json
 {
   "code": 1000,
   "message": "success",
   "data": {
-    "res": true
+    "0xXXXXXXXXXXXXXXXXXXXXXXXXXX": true
   }
 }
 ```
