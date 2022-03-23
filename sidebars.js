@@ -52,20 +52,6 @@ const sidebars = {
                 },
                 {
                     type: 'category',
-                    label: 'OAuth',
-                    items: [{
-                        type: 'category',
-                        label: '开始',
-                        items: ['OAuth/intro', 'OAuth/accessToken'],
-                    },
-                        {
-                            type: 'category',
-                            label: '接口',
-                            items: ['OAuth/userInfo'],
-                        }],
-                },
-                {
-                    type: 'category',
                     label: '服务端 API',
                     items: [{
                         type: 'category',
@@ -75,7 +61,7 @@ const sidebars = {
                         {
                             type: 'category',
                             label: '接口',
-                            items: ['Open/userInfo', 'Open/checkAddress'],
+                            items: ['Open/checkAddress'],
                         }],
                 },
 

@@ -36,7 +36,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 | 参数名 | 类型   | 备注        |
 |-----|------|-----------|
-| res | Bool | 地址是否属于改账户 |
+| res | Bool | 地址是否属于该账户 |
 
 ```json
 {
