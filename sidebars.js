@@ -31,41 +31,44 @@ const sidebars = {
             items: [
                 {
                     type: 'category',
-                    label: 'Provider API',
+                    label: 'SDK',
                     items: [
-                        'quick_start', 'usage'
+                        'quick_start'
                     ],
                 },
                 {
                     type: 'category',
-                    label: 'OAuth API',
-                    items: [{
-                        type: 'category',
-                        label: '开始',
-                        items: ['OAuth/intro', 'OAuth/accessToken'],
-                    },
-                        {
-                            type: 'category',
-                            label: '接口',
-                            items: ['OAuth/userInfo'],
-                        }],
+                    label: 'OAuth',
+                    items: ['OAuth/intro', 'OAuth/accessToken'],
                 },
                 {
                     type: 'category',
-                    label: '服务端 API',
-                    items: [{
-                        type: 'category',
-                        label: '开始',
-                        items: ['Service/intro', 'Service/serviceToken'],
-                    },
-                        {
-                            type: 'category',
-                            label: '接口',
-                            items: ['Service/checkAddress'],
-                        }],
+                    label: '服务端',
+                    items: ['Service/intro', 'Service/serviceToken'],
                 },
 
             ],
+        },
+        {
+            type: 'category',
+            label: 'API',
+            items: [
+                {
+                    type: 'category',
+                    label: 'SDK',
+                    items: [
+                        'usage'
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'OAuth',
+                    items: ['OAuth/userInfo'],
+                }, {
+                    type: 'category',
+                    label: '服务端',
+                    items: ['Service/checkAddress'],
+                },]
         },
         {
             type: 'doc',
