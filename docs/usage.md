@@ -11,7 +11,7 @@
 * `availableNetwork`: 限定可以选择的网络。
 * `scopes`: 指定请求的授权的信息，有以下可选值：
   * `baseInfo`: 获取基本信息，包括地址、名称和头像等。
-  * `real identity`: 授权获取手机号等信息。
+  * `identity`: 授权获取手机号等信息。
 
 :::caution 注意
 
@@ -55,14 +55,14 @@ provider.request({
  * @return {object} 账户地址列表和 OAuth Code 等信息 {
  *     address: ['cfx:xxxxxx', 'cfx:xxxxxx'],
  *     code: 'xxxxx-xxxx-xxxx-xxxx-xxxxx',
- *     scopes: ['baseinfo']
+ *     scopes: ['baseInfo']
  * }
  */
 provider.request({
     method: 'cfx_accounts',
     params: [{
         availableNetwork: [1029],
-        scopes: ['baseinfo']
+        scopes: ['baseInfo']
     }]
 }).then((result) => {
     const {address, code, scopes} = result

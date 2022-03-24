@@ -18,7 +18,7 @@ AccessToken 是用户授权后的凭证，用于调用其他 OAuth API。
 provider.request({
     method: 'cfx_accounts',
     params: [{
-        scopes: ['baseinfo', 'real identity'],
+        scopes: ['baseInfo', 'identity'],
     }]
 }).then((result) => {
     const {address, code, scopes} = result
