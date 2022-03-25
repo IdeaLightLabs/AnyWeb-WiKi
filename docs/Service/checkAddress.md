@@ -4,7 +4,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 ## 基本介绍
 
-检查账户地址是否属于该用户。
+检查账户地址是否属于该用户。需要用户授予 [baseInfo](https://wiki.anyweb.cc/docs/usage#conflux) 权限。
 
 ## 具体过程
 
@@ -26,17 +26,17 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 #### 具体参数内容
 
-| 参数名          | 类型       | 备注             |
-|--------------|----------|----------------|
-| serviceToken | String   | `serviceToken` |
-| unionid      | String   | `unionid`      |
-| address      | String[] | 地址列表           |
+| 参数名          | 类型      | 备注             |
+|--------------|---------|----------------|
+| serviceToken | String  | `serviceToken` |
+| unionid      | String  | `unionid`      |
+| address      | String | 地址列表，`,`隔开     |
 
 #### 返回值
 
-| 参数名 | 类型                       | 备注| 
-|-----|--------------------------|---------------- | 
-| res | Record<String, Bool>     | 键名为地址，键值为布尔值的对象|
+| 参数名 | 类型                       | 备注               | 
+|-----|--------------------------|------------------| 
+| res | Record<String, Bool>     | 键名为地址，键值为布尔值的对象  |
 
 ```json
 {
@@ -56,17 +56,17 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 ```javascript
 const request = require('request');
 const options = {
-    'method': 'POST',
-    'url': 'https://api.anyweb.cc/service/checkAddress',
-    formData: {
-        'serviceToken': 'serviceToken',
-        'unionid': 'unionid',
-        'address': 'cfx:xxxxxx',
-    }
+  'method': 'POST',
+  'url': 'https://api.anyweb.cc/service/checkAddress',
+  formData: {
+    'serviceToken': 'serviceToken',
+    'unionid': 'unionid',
+    'address': 'cfx:xxxxxx',
+  }
 };
 request(options, function (error, response) {
-    if (error) throw new Error(error);
-    console.log(response.body);
+  if (error) throw new Error(error);
+  console.log(response.body);
 });
 ```
 

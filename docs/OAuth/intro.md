@@ -19,19 +19,20 @@ AnyWeb 授权是通过 OAuth2.0 机制实现的，在用户授权给 DApp 后，
 
 ## 错误码
 
-| 错误码      | 内容             |
-|----------|----------------|
-| 1000     | 正常             | 
-| A107P001 | accessToken 为空 |
-| A107P002 | appid 为空       |
-| A107P003 | unionid 为空     |
-| A107P004 | secret 为空      |
-| A107P005 | secret 无效      |
-| A107P006 | accessToken 无效 |
-| A107P007 | appid 无效       |
-| A107P008 | unionid 无效     |
-| A107P009 | code 无效        |
-| A107P010 | 应用开发者不存在       |
-| A107P011 | 用户未授权          |
-| A107P012 | 用户不存在          |
+| 错误码      | 内容              |
+|----------|-----------------|
+| 1000     | 正常              | 
+| A107P001 | accessToken 为空  |
+| A107P002 | appid 为空        |
+| A107P003 | unionid 为空      |
+| A107P004 | secret 为空       |
+| A107P005 | secret 无效       |
+| A107P006 | accessToken 无效  |
+| A107P007 | appid 无效        |
+| A107P008 | unionid 无效      |
+| A107P009 | code 无效         |
+| A107P010 | 应用开发者不存在        |
+| A107P011 | 用户未授权           |
+| A107P012 | 用户不存在           |
+| A107B013 | refreshToken 无效 |
 

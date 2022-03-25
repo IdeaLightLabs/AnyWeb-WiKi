@@ -14,10 +14,10 @@ ServiceToken 是开放平台相关接口的调用凭证。
 
 #### 请求信息
 
-| 标题   | 内容                                      |
-|------|-----------------------------------------|
-| 地址   | https://api.anyweb.cc/service/serviceToken |
-| 方法   | POST                                    |
+| 标题  | 内容                                         |
+|-----|--------------------------------------------|
+| 地址  | https://api.anyweb.cc/service/serviceToken |
+| 方法  | POST                                       |
 
 #### 具体参数内容
 

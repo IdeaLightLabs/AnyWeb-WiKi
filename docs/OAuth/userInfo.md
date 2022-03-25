@@ -13,11 +13,12 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 ### 信息分级
 
-AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的用户信息分为三个等级：
+AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的用户信息分为四个等级（返回值的 `level` 字段）：
 
-1. 用户手机号和其他基础信息
-2. 用户实名认证信息
-3. 用户活体认证信息
+- 0：用户基础信息，包含用户的基本信息，如：昵称、头像等（需要 [baseInfo](https://wiki.anyweb.cc/docs/usage#conflux) 权限）
+- 1：用户手机号信息（返回值增加 `phone` 字段）（需要 [identity](https://wiki.anyweb.cc/docs/usage#conflux) 权限）
+- 2：用户实名认证信息（暂未开放）（返回值增加 `name` 字段）
+- 3：用户活体认证信息（暂未开放）
 
 ## 具体过程
 
@@ -47,18 +48,20 @@ AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的�
 | 参数名         | 类型     | 备注                            |
 |-------------|--------|-------------------------------|
 | appid       | String | 从 open.anyweb.cc 拿到的 `appid`  |
-| accessToken | String |  `accessToken`          |
-| unionid     | String |  `unionid`              |
+| secret      | String | 从 open.anyweb.cc 拿到的 `secret` |
+| accessToken | String | `accessToken`                 |
+| unionid     | String | `unionid`                     |
 
 #### 返回值
 
-| 参数名      | 类型     | 备注          |
-|----------|--------|-------------|
-| nickName | String | 用户昵称        |
-| headImg  | String | 头像地址        |
-| phone    | String | 手机号         |
-| level    | Number | 获取到的信息等级    |
-| unionid  | String | 用户的 unionid |
+| 参数名      | 类型     | 备注                                                                                       |
+|----------|--------|------------------------------------------------------------------------------------------|
+| nickName | String | 用户昵称                                                                                     |
+| headImg  | String | 头像地址                                                                                     |
+| level    | Number | 获取到的信息等级                                                                                 |
+| unionid  | String | 用户的 unionid                                                                              |
+| phone    | String | 手机号（需要 [identity](https://wiki.anyweb.cc/docs/usage#conflux) 权限）                         |
+| name     | String | 用户的真实姓名（需要 [identity](https://wiki.anyweb.cc/docs/usage#conflux) ，并且用户的信息等级 `level` ≥ 2） |
 
 ```json
 {
@@ -67,9 +70,9 @@ AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的�
   "data": {
     "nickName": "xxx",
     "headImg": "https://anyweb.oss-cn-hangzhou.aliyuncs.com/header.jpg",
-    "phone": "xxxxxxxxxxx",
     "level": 0,
-    "unionid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx"
+    "unionid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+    "phone": "xxxxxxxxxxx"
   }
 }
 ```
@@ -82,17 +85,17 @@ AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的�
 ```javascript
 const request = require('request');
 const options = {
-    'method': 'POST',
-    'url': 'https://api.anyweb.cc/oauth/userInfo',
-    formData: {
-        'appid': '从open.anyweb.cc拿到的appid',
-        'accessToken': 'accessToken',
-        'unionid': 'unionid'
-    }
+  'method': 'POST',
+  'url': 'https://api.anyweb.cc/oauth/userInfo',
+  formData: {
+    'appid': '从open.anyweb.cc拿到的appid',
+    'accessToken': 'accessToken',
+    'unionid': 'unionid'
+  }
 };
 request(options, function (error, response) {
-    if (error) throw new Error(error);
-    console.log(response.body);
+  if (error) throw new Error(error);
+  console.log(response.body);
 });
 ```
 

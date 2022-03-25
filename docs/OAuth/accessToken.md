@@ -16,15 +16,15 @@ AccessToken 是用户授权后的凭证，用于调用其他 OAuth API。
 
 ```javascript
 provider.request({
-    method: 'cfx_accounts',
-    params: [{
-        scopes: ['baseInfo', 'identity'],
-    }]
+  method: 'cfx_accounts',
+  params: [{
+    scopes: ['baseInfo', 'identity'],
+  }]
 }).then((result) => {
-    const {address, code, scopes} = result
-    console.log("用户地址", address, "OAuth Code", code, "Scope", scopes)
+  const {address, code, scopes} = result
+  console.log("用户地址", address, "OAuth Code", code, "Scope", scopes)
 }).catch((e) => {
-    console.error('调用失败', e)
+  console.error('调用失败', e)
 })
 ```
 
@@ -44,18 +44,19 @@ DApp 拿到了 `code` 后，后端需要自行通过 POST 请求指定接口换�
 | 参数名    | 类型     | 备注                            |
 |--------|--------|-------------------------------|
 | appid  | String | 从 open.anyweb.cc 拿到的 `appid`  |
+| secret | String | 从 open.anyweb.cc 拿到的 `secret` |
 | code   | String | 上一步获取的 `code`                 |
 
 #### 返回值
 
-| 参数名          | 类型       | 备注                                |
-|--------------|----------|-----------------------------------|
-| unionid      | String   | 用户的 `unionid`                     |
-| accessToken  | String   | 换取到的 `accessToken`                |
-| expiresIn    | Number   | `accessToken` 有效时间                |
-| refreshToken | Number   | 用于更新 `accessToken` 的 `refreshToken` |
-| expiresIn    | Number   | `refreshToken` 过期时间戳              |
-| scope        | String[] | `accessToken` 的权限范围               |
+| 参数名          | 类型     | 备注                                                                       |
+|--------------|--------|--------------------------------------------------------------------------|
+| unionid      | String | 用户的 `unionid`                                                            |
+| accessToken  | String | 换取到的 `accessToken`                                                       |
+| expiresIn    | Number | `accessToken` 有效时间                                                       |
+| refreshToken | Number | 用于更新 `accessToken` 的 `refreshToken`                                      |
+| expiresIn    | Number | `refreshToken` 过期时间戳                                                     |
+| scope        | String | `accessToken` 的[权限列表](https://wiki.anyweb.cc/docs/usage#conflux) , `,`隔开 |
 
 ```json
 {
@@ -67,10 +68,12 @@ DApp 拿到了 `code` 后，后端需要自行通过 POST 请求指定接口换�
     "expiresIn": 7200,
     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXQtYWYzMi1lMTA2MGRlMDdkODAiLCJhcHBpZCI6IjFkMTQ3YzA3LTYzOWYtNGFiNC1hYjQ5LTczZDFkODk5MDk5OSIsImlzUmVmcmVzaCI6dHJ1ZSwiaWF0IjoxNjXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.fHm7xf9CWAXbN3rlJ83ExAC1aW9kmK-N6FyvyqcYumA",
     "refreshExpiresIn": 2592000,
-    "scope": "all"
+    "scope": "baseInfo,identity"
   }
 }
 ```
+
+#### 权限说明
 
 #### 请求示例
 
@@ -80,16 +83,16 @@ DApp 拿到了 `code` 后，后端需要自行通过 POST 请求指定接口换�
 ```javascript
 const request = require('request');
 const options = {
-    'method': 'POST',
-    'url': 'https://api.anyweb.cc/oauth/accessToken',
-    formData: {
-        'appid': '从open.anyweb.cc拿到的appid',
-        'code': '上一步获取的code'
-    }
+  'method': 'POST',
+  'url': 'https://api.anyweb.cc/oauth/accessToken',
+  formData: {
+    'appid': '从open.anyweb.cc拿到的appid',
+    'code': '上一步获取的code'
+  }
 };
 request(options, function (error, response) {
-    if (error) throw new Error(error);
-    console.log(response.body);
+  if (error) throw new Error(error);
+  console.log(response.body);
 });
 ```
 
@@ -183,15 +186,15 @@ public class main {
 ```javascript
 const request = require('request');
 const options = {
-    'method': 'POST',
-    'url': 'https://api.anyweb.cc/open/refreshToken',
-    formData: {
-        'refreshToken': '获取 accessToken 时返回的 refreshToken'
-    }
+  'method': 'POST',
+  'url': 'https://api.anyweb.cc/open/refreshToken',
+  formData: {
+    'refreshToken': '获取 accessToken 时返回的 refreshToken'
+  }
 };
 request(options, function (error, response) {
-    if (error) throw new Error(error);
-    console.log(response.body);
+  if (error) throw new Error(error);
+  console.log(response.body);
 });
 ```
 
