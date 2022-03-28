@@ -7,7 +7,7 @@ src="https://anyweb.oss-cn-hangzhou.aliyuncs.com/app/2052a88e-5e6a-4d38-85af-650
 
 ## AnyWeb 是什么？
 
-AnyWeb 树图数连是一款针对中国环境设计的无需插件、强合规的区块链资产钱包及统一认证服务，支持国内唯一合规公链——Conflux 树图公链。
+AnyWeb 树图数连是一款针对中国环境设计的无需插件、强合规的区块链资产钱包，支持国内唯一合规公链——Conflux 树图公链。同时，AnyWeb 提供了一整套国内合规、开发者友好的 Web3 应用接入解决方案，包含“账户统一认证”、“法币链上支付”、“热钱包私钥托管”等合规方案，并拥有符合 Web3 原生开发标准的 API / SDK，方便开发者在 Conflux 树图公链零成本、快速上线国内合规 Web3 业务，助力中国 Web3 生态发展。
 
 <br/>
 
@@ -20,6 +20,8 @@ AnyWeb 树图数连的核心特性：
 3、AnyWeb 针对中国应用场景、开发者习惯设计，AnyWeb 支持
 App、H5、小程序多种方式接入，并提供开源 [AnyWeb-JS-SDK](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK) 。与此同时，AnyWeb 兼容已有 DApp 的一键接入，开发
 DApp 业务逻辑与现有 Conflux-JS-SDK / Web3.js 习惯保持一致。
+
+4、AnyWeb 针对国内支付环境的合规要求设计，AnyWeb 支持将法币交易凭据上链，支持支付宝、银联等支付服务商，使得开发者能够直接从合约侧校验一笔法币交易的真实性，进而打通法币与链上合约的交互能力，应用场景包括但不限于：法币购买NFT、法币支付消费存证等。
 
 ## 为什么中国 Web3 需要 AnyWeb？
 
