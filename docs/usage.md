@@ -220,28 +220,6 @@ provider.request({
 })
 ```
 
-### 启动 AnyWeb
-
-启动 AnyWeb 的首页。
-
-```javascript
-/**
- * 获取版本号
- * @return {string} 状态 'ok'
- */
-provider.request({
-    method: 'anyweb_home',
-}).then((result) => {
-    if (result === 'ok') {
-        console.log('启动AnyWeb成功')
-    } else {
-        console.error('启动AnyWeb失败')
-    }
-}).catch((e) => {
-    console.error('调用失败', e)
-})
-```
-
 ### 退出登录
 
 切换到其他地址进行重新授权。

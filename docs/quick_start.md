@@ -103,14 +103,6 @@ provider.request({
 })
 
 /**
- * 启动AnyWeb首页
- * @return {void}
- */
-provider.request({
-    method: 'anyweb_home',
-})
-
-/**
  * 获取AnyWeb版本号
  * @return {1.0.0}
  */
