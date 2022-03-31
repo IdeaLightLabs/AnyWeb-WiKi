@@ -89,6 +89,7 @@ const options = {
   'url': 'https://api.anyweb.cc/oauth/userInfo',
   formData: {
     'appid': '从open.anyweb.cc拿到的appid',
+    'secret': '从open.anyweb.cc拿到的secret',
     'accessToken': 'accessToken',
     'unionid': 'unionid'
   }
@@ -107,6 +108,7 @@ import requests
 
 response = requests.request("POST", "https://api.anyweb.cc/oauth/userInfo", data={
     'appid': '从open.anyweb.cc拿到的appid',
+    'secret': '从open.anyweb.cc拿到的secret',
     'accessToken': 'accessToken',
     'unionid': 'unionid'
 })
@@ -128,6 +130,7 @@ public class main {
         MediaType mediaType = MediaType.parse("text/plain");
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("appid", "从open.anyweb.cc拿到的appid")
+                .addFormDataPart("secret", "从open.anyweb.cc拿到的secret")
                 .addFormDataPart("accessToken", "accessToken")
                 .addFormDataPart("unionid", "unionid")
                 .build();
