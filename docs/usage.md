@@ -158,7 +158,8 @@ provider.request({
 导入账户分为两类:
 
 * **导入地址**: 只导入该地址的账户信息，不导入该地址的私钥，可以查看该地址信息但无法进行链上操作。
-* **导入私钥**: 导入私钥，可以查看该地址信息，可以进行链上操作。
+
+[//]: # (* **导入私钥**: 导入私钥，可以查看该地址信息，可以进行链上操作。)
 
 #### 导入地址
 
@@ -181,26 +182,43 @@ provider.request({
 })
 ```
 
-#### 导入私钥 
+[//]: # (#### 导入私钥 )
 
-导入私钥时参数只需要传入 `privateKey` 即可: 
+[//]: # ()
+[//]: # (导入私钥时参数只需要传入 `privateKey` 即可: )
 
-```javascript
-/**
- * 导入私钥
- * @return {string[]} 地址列表 ['cfx:xxxxxx', 'cfx:xxxxxx']
- */
-provider.request({
-    method: 'anyweb_importAccount',
-    params: [{
-        privateKey: ['0xaaaaaa', '0xaaaaaa'],
-    }],
-}).then((result) => {
-    console.log('导入的地址列表', result)
-}).catch((e) => {
-    console.error('调用失败', e)
-})
-```
+[//]: # ()
+[//]: # (```javascript)
+
+[//]: # (/**)
+
+[//]: # ( * 导入私钥)
+
+[//]: # ( * @return {string[]} 地址列表 ['cfx:xxxxxx', 'cfx:xxxxxx'])
+
+[//]: # ( */)
+
+[//]: # (provider.request&#40;{)
+
+[//]: # (    method: 'anyweb_importAccount',)
+
+[//]: # (    params: [{)
+
+[//]: # (        privateKey: ['0xaaaaaa', '0xaaaaaa'],)
+
+[//]: # (    }],)
+
+[//]: # (}&#41;.then&#40;&#40;result&#41; => {)
+
+[//]: # (    console.log&#40;'导入的地址列表', result&#41;)
+
+[//]: # (}&#41;.catch&#40;&#40;e&#41; => {)
+
+[//]: # (    console.error&#40;'调用失败', e&#41;)
+
+[//]: # (}&#41;)
+
+[//]: # (```)
 
 ### 获取版本号
 
