@@ -30,7 +30,7 @@ $ npm install --save @idealight-labs/anyweb-js-sdk
 ### ESM
 
 ```javascript
-import {Provider} from 'anyweb-js-sdk';
+import {Provider} from '@idealight-labs/anyweb-js-sdk';
 
 conflux.provider = new Provider({
     logger: console,
