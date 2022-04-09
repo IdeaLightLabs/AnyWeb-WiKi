@@ -161,8 +161,11 @@ provider.request({
 
 #### 导入地址
 
-导入地址时参数只需要传入 `address` 即可: 
+导入地址时参数只需要传入 `address` 即可。
 
+如果希望自定义展示地址名称，只增加 `addressName` 即可，`addressName` 长度需和 `address` 保持一致。
+
+不传 `addressName` 或长度为 0 时系统会默认为地址添加自增的名称如：Account1
 ```javascript
 /**
  * 导入地址
@@ -172,6 +175,7 @@ provider.request({
     method: 'anyweb_importAccount',
     params: [{
         address: ['cfx:xxxxxx', 'cfx:xxxxxx'],
+        addressName: ['账户1', '账户2'], // 选填
     }],
 }).then((result) => {
     console.log('导入的地址列表', result)

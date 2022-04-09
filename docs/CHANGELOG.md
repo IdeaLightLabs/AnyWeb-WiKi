@@ -2,7 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [1.0.11](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.0.10...v1.0.11) (2022-03-22)
+### [1.0.13](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.0.12...v1.0.13) (2022-04-02)
+
+
+### Bug Fixes
+
+* **chrome window problem:** fix the chrome window problem ([67d82f6](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/67d82f66371615b9a185ec02eb95200eb433c0a9))
+
+### [1.0.12](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.0.11...v1.0.12) (2022-04-02)
+
+
+### Bug Fixes
+
+* **logout problem:** fix the logout fail problem and remove the cache of SDK ([a662f07](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/a662f0735ac45331c7da0151bbf4537fe2921145))
+* **scope name:** fix the error scope name ([633f860](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/633f86043b7c4c843c26af252f5939367fd4642b))
+
+### [1.0.11](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.0.10...v1.0.11) (2022-03-22)
 
 
 ### Features
@@ -10,14 +25,14 @@ All notable changes to this project will be documented in this file. See [standa
 * **support logout and change OAuth API:** add logout API and change the way of getting OAuth Code ([38831b4](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/38831b4dbed1196297589a9adeb9271ef610bf80))
 * **support more scopes:** support more scopes ([6a020f3](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/6a020f31f9bb95bf57a918bc857be786b4d1bc38))
 
-## [1.0.10](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.0.9...v1.0.10) (2022-03-22)
+### [1.0.10](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.0.9...v1.0.10) (2022-03-22)
 
 
 ### Bug Fixes
 
 * **package src file path:** fix the error of the path ([7f0c0d5](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/7f0c0d5c46f839227a2db5b76b138fe12bab2dc2))
 
-## [1.0.9](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.0.8...v1.0.9) (2022-03-19)
+### [1.0.9](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.0.8...v1.0.9) (2022-03-19)
 
 
 ### Features
