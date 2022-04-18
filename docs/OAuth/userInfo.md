@@ -11,14 +11,21 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 1. 获取 `accessToken`
 2. 通过 `accessToken` 和 `unionid` 获取具体用户信息
 
-### 信息分级
+### 信息权限分级
 
-AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的用户信息分为四个等级（返回值的 `level` 字段）：
+AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的的返回内容由用户授予 DApp 的权限决定，当授予：
 
-- 0：用户基础信息，包含用户的基本信息，如：昵称、头像等（需要用户授予 [baseInfo](https://wiki.anyweb.cc/docs/usage#conflux) 权限）
-- 1：用户手机号信息（返回值增加 `phone` 字段）（需要用户授予 [identity](https://wiki.anyweb.cc/docs/usage#conflux) 权限）
-- 2：用户实名认证信息（暂未开放）（返回值增加 `name` 字段）
-- 3：用户活体认证信息（暂未开放）
+- [baseInfo](https://wiki.anyweb.cc/docs/usage#conflux) 权限：可获得用户基本信息，包括：
+  - `unionid` String 每个用户在开发者账户下的唯一标识
+  - `addressList` String[] 用户授予的地址列表
+  - `availableNetwork` Number 用户授予的网络ID
+- [identity](https://wiki.anyweb.cc/docs/usage#conflux) 权限：可获得用户身份信息，包括：
+  - `phone` Number 用户手机号
+  - `level` Number 用户实名等级
+    - 0: 手机号认证
+    - 1: 身份证认证（即将上线）
+  - `name` String 用户真实姓名(当 `level` 为 1 时才会出现该字段)
+  - `idNumber` String 用户身份证号(当 `level` 为 1 时才会出现该字段)
 
 ## 具体过程
 
@@ -54,24 +61,34 @@ AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的�
 
 #### 返回值
 
-| 参数名      | 类型     | 备注                                                                                         |
-|----------|--------|--------------------------------------------------------------------------------------------|
-| nickName | String | 用户昵称                                                                                       |
-| headImg  | String | 头像地址                                                                                       |
-| level    | Number | 获取到的信息等级                                                                                   |
-| unionid  | String | 用户的 unionid                                                                                |
-| phone    | String | 手机号（需要 [identity](https://wiki.anyweb.cc/docs/usage#conflux) 权限）                           |
-| name     | String | 用户的真实姓名（需要 [identity](https://wiki.anyweb.cc/docs/usage#conflux) 权限，并且用户的信息等级 `level` ≥ 2） |
+| 参数名              | 类型       | 备注          |
+|------------------|----------|-------------|
+| unionid          | String   | 用户的 unionid |
+| addressList      | String[] | 用户的地址列表     |
+| availableNetwork | Number   | 用户的网络ID     |
+| level            | Number   | 获取到的信息等级    |
+| phone            | String   | 手机号         |
+| name             | String   | 用户真实姓名      |
+| idNumber         | String   | 用户真实姓名      |
+
+:::caution 注意
+
+返回字段具体逻辑参考信息权限分级
+
+:::
 
 ```json
 {
   "code": 1000,
   "message": "success",
   "data": {
-    "nickName": "xxx",
-    "headImg": "https://anyweb.oss-cn-hangzhou.aliyuncs.com/header.jpg",
-    "level": 0,
     "unionid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+    "addressList": [
+      "cfx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "cfx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    ],
+    "availableNetwork": 1029,
+    "level": 0,
     "phone": "xxxxxxxxxxx"
   }
 }
@@ -107,10 +124,10 @@ request(options, function (error, response) {
 import requests
 
 response = requests.request("POST", "https://api.anyweb.cc/oauth/userInfo", data={
-    'appid': '从open.anyweb.cc拿到的appid',
-    'secret': '从open.anyweb.cc拿到的secret',
-    'accessToken': 'accessToken',
-    'unionid': 'unionid'
+  'appid': '从open.anyweb.cc拿到的appid',
+  'secret': '从open.anyweb.cc拿到的secret',
+  'accessToken': 'accessToken',
+  'unionid': 'unionid'
 })
 print(response.text)
 ```
@@ -124,23 +141,23 @@ import java.io.*;
 import okhttp3.*;
 
 public class main {
-    public static void main(String[] args) throws IOException {
-        OkHttpClient client = new OkHttpClient().newBuilder()
-                .build();
-        MediaType mediaType = MediaType.parse("text/plain");
-        RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
-                .addFormDataPart("appid", "从open.anyweb.cc拿到的appid")
-                .addFormDataPart("secret", "从open.anyweb.cc拿到的secret")
-                .addFormDataPart("accessToken", "accessToken")
-                .addFormDataPart("unionid", "unionid")
-                .build();
-        Request request = new Request.Builder()
-                .url("https://api.anyweb.cc/oauth/userInfo")
-                .method("POST", body)
-                .build();
-        Response response = client.newCall(request).execute();
-        System.out.println(response.body().string());
-    }
+  public static void main(String[] args) throws IOException {
+    OkHttpClient client = new OkHttpClient().newBuilder()
+            .build();
+    MediaType mediaType = MediaType.parse("text/plain");
+    RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
+            .addFormDataPart("appid", "从open.anyweb.cc拿到的appid")
+            .addFormDataPart("secret", "从open.anyweb.cc拿到的secret")
+            .addFormDataPart("accessToken", "accessToken")
+            .addFormDataPart("unionid", "unionid")
+            .build();
+    Request request = new Request.Builder()
+            .url("https://api.anyweb.cc/oauth/userInfo")
+            .method("POST", body)
+            .build();
+    Response response = client.newCall(request).execute();
+    System.out.println(response.body().string());
+  }
 }
 
 ```
