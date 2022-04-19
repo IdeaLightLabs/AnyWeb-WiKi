@@ -13,13 +13,12 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 ### 信息权限分级
 
-AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的的返回内容由用户授予 DApp 的权限决定，当授予：
+AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的的返回内容由用户授予 DApp 的权限决定，在返回值的 `scopes` 字段中，当含有字段：
 
 - [baseInfo](https://wiki.anyweb.cc/docs/usage#conflux) 权限：可获得用户基本信息，包括：
   - `unionid` String 每个用户在开发者账户下的唯一标识
   - `addressList` String[] 用户授予的地址列表
   - `network` Number 用户授予的网络ID
-  - `scopes` String[] 用户授予的权限列表
 - [identity](https://wiki.anyweb.cc/docs/usage#conflux) 权限：可获得用户身份信息，包括：
   - `phone` Number 用户手机号
   - `level` Number 用户实名等级
@@ -64,10 +63,10 @@ AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的�
 
 | 参数名         | 类型       | 备注          |
 |-------------|----------|-------------|
+| scopes      | String[] | 用户的权限列表     |
 | unionid     | String   | 用户的 unionid |
 | addressList | String[] | 用户的地址列表     |
 | network     | Number   | 用户的网络ID     |
-| scopes      | String[] | 用户的权限列表     |
 | level       | Number   | 获取到的信息等级    |
 | phone       | String   | 手机号         |
 | name        | String   | 用户真实姓名      |
@@ -84,6 +83,10 @@ AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的�
   "code": 1000,
   "message": "success",
   "data": {
+    "scopes": [
+      "baseInfo",
+      "identity"
+    ],
     "unionid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
     "addressList": [
       "cfx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
