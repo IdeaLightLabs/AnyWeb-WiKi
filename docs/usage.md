@@ -39,10 +39,10 @@
  */
 provider.request({
   method: 'cfx_accounts',
-  params: {
+  params: [{
     availableNetwork: [1, 1029],
     scopes: ['baseInfo', 'identity'],
-  },
+  }],
 }).then((result) => {
   const {chainId, networkId, address, code} = data
   console.log(
@@ -56,24 +56,6 @@ provider.request({
   console.error('调用失败', e)
 })
 ```
-
-:::caution 接口变动
-
-对比上一个版本的接口`provider.request` 中的 `params` 参数去除了无意义的数组包裹
-
-    params: [{
-      availableNetwork: [1, 1029],
-      scopes: ['baseInfo', 'identity'],
-    }],
-
-变更为
-
-    params: {
-      availableNetwork: [1, 1029],
-      scopes: ['baseInfo', 'identity'],
-    }
-
-:::
 
 :::caution 说明
 
@@ -115,15 +97,14 @@ provider.request({
  */
 provider.request({
   method: 'cfx_sendTransaction',
-  params: {
-    payload: {
+  params: [{
       from: 'cfx:xxxxxx',
       to: 'cfx:xxxxxx',
       value: '0x1',
     },
-    // gatewayPayload 可选
-    gatewayPayload: {},
-  }
+    {
+      // gatewayPayload 可选
+    }]
 }).then((result) => {
   console.log('交易hash', result)
 }).catch((e) => {
@@ -206,10 +187,10 @@ provider.request({
  */
 provider.request({
   method: 'anyweb_importAccount',
-  params: {
+  params: [{
     address: ['cfx:xxxxxx', 'cfx:xxxxxx'],
     addressName: ['账户1', '账户2'], // 选填
-  },
+  }],
 }).then((result) => {
   console.log('导入的地址列表', result)
 }).catch((e) => {
