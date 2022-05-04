@@ -10,6 +10,7 @@
 | exit_accounts        | 取消 Conflux 账户授权     |
 | cfx_sendTransaction  | 发起 Conflux 合约调用     |
 | anyweb_importAccount | 将账户地址导入 AnyWeb 中    |
+| anyweb_identify      | 跳转到 AnyWeb 进行实名认证   |
 | anyweb_version       | 获取 AnyWeb JS-SDK 版本 |
 | anyweb_home          | 启动 AnyWeb 首页        |
 
@@ -43,7 +44,7 @@ provider.request({
     availableNetwork: [1, 1029],
     scopes: ['baseInfo', 'identity'],
   }],
-}).then((result) => {
+}).then((data) => {
   const {chainId, networkId, address, code} = data
   console.log(
     'DApp 获取到的授权结果',
@@ -83,6 +84,31 @@ provider.request({
 })
 ```
 
+### 实名认证 `anyweb_identify`
+
+一些场景下需要用户的实名信息，可以先通过 [用户信息获取](https://wiki.anyweb.cc/docs/OAuth/userInfo) 接口尝试获取用户实名信息。如果用户未进行实名认证，可通过以下代码跳转到 AnyWeb 进行实名认证。认证成功后可再次尝试通过 [用户信息获取](https://wiki.anyweb.cc/docs/OAuth/userInfo) 接口获取实名认证信息。
+
+返回值：
+
+| 键名     | 类型      | 说明                              |
+|--------|---------|---------------------------------|
+| result | Boolean | `result` 为 `true` 时说明用户已经通过了认证。 |
+
+```javascript
+/**
+ * 取消授权
+ */
+provider.request({
+  method: 'anyweb_identify',
+  params: []
+}).then((data) => {
+  console.log('result', data.result)
+  // 后续操作
+}).catch((e) => {
+  console.error('调用失败', e)
+})
+```
+
 ### 发起交易（❗️文档正在更新中）
 
 当需要进行签名交易时，调用 `cfx_sendTransaction` 并传入交易参数即可。
@@ -98,10 +124,10 @@ provider.request({
 provider.request({
   method: 'cfx_sendTransaction',
   params: [{
-      from: 'cfx:xxxxxx',
-      to: 'cfx:xxxxxx',
-      value: '0x1',
-    },
+    from: 'cfx:xxxxxx',
+    to: 'cfx:xxxxxx',
+    value: '0x1',
+  },
     {
       // gatewayPayload 可选
     }]

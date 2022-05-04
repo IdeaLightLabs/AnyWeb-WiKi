@@ -1,6 +1,6 @@
 # AnyWeb 介绍
 
-> 如有任何疑问，请添加 AnyWeb 客服微信：SSSt0ne
+> 如有任何疑问，请扫码联系，二维码在文末。
 
 <p style={{textAlign: 'center'}}><img alt="AnyWeb"
 src="https://anyweb.oss-cn-hangzhou.aliyuncs.com/app/2052a88e-5e6a-4d38-85af-6509c175abdf.png"/></p>
@@ -128,4 +128,7 @@ AnyWeb 的诞生承载着产品团队对于中国 Web3 时代的无限美好期�
 
 帮助 / 反馈邮箱：open@idealight.ltd
 
-加入官方体验群了解更多信息
+如有合作需求或者任何 AnyWeb 相关的问题，都可扫码联系，谢谢。
+
+<img alt="AnyWeb"
+src="https://anyweb.oss-cn-hangzhou.aliyuncs.com/contact-qrcode.jpg"/>
