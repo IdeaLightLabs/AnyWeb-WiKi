@@ -23,7 +23,7 @@ AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的�
   - `phone` Number 用户手机号
   - `level` Number 用户实名等级
     - 0: 手机号认证
-    - 1: 身份证认证（即将上线）
+    - 1: 身份证认证
   - `name` String 用户真实姓名(当 `level` 为 1 时才会出现该字段)
   - `idNumber` String 用户身份证号(当 `level` 为 1 时才会出现该字段)
 
