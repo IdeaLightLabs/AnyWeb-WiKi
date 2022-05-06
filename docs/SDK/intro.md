@@ -1,4 +1,4 @@
-# AnyWeb JS SDK
+# AnyWeb JS SDK 介绍
 
 AnyWeb JS SDK 是为 [Anyweb](https://wiki.anyweb.cc/docs/anyweb/) 开发的SDK，提供了一套简单的API，方便开发者快速将 Dapp 接入到 AnyWeb 中实现便捷的钱包服务。
 

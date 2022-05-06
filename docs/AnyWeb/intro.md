@@ -1,6 +1,7 @@
 # AnyWeb 介绍
 
-> 如有任何疑问，请扫码联系，二维码在文末。
+> 进一步了解，请[扫码](#写在最后)添加官方客服，获取支持。 
+
 
 <p style={{textAlign: 'center'}}><img alt="AnyWeb"
 src="https://anyweb.oss-cn-hangzhou.aliyuncs.com/app/2052a88e-5e6a-4d38-85af-6509c175abdf.png"/></p>

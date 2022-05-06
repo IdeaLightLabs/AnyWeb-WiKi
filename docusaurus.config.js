@@ -72,7 +72,7 @@ const config = {
                 items: [
                     {
                         type: 'doc',
-                        docId: 'intro',
+                        docId: 'SDK/intro',
                         position: 'left',
                         label: '文档',
                     },
@@ -96,7 +96,7 @@ const config = {
                         items: [
                             {
                                 label: 'Tutorial',
-                                to: '/docs/intro',
+                                to: '/docs/SDK/intro',
                             },
                         ],
                     },
