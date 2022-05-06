@@ -38,7 +38,7 @@ const sidebars = {
                         {
                             type: 'doc',
                             id: 'SDK/OAuth/intro',
-                            label: '介绍(区别、错误码)',
+                            label: '介绍（区别、错误码）',
                         },
                         'SDK/OAuth/accessToken',
                         'SDK/OAuth/userInfo',
@@ -51,7 +51,7 @@ const sidebars = {
                         {
                             type: 'doc',
                             id: 'SDK/Service/intro',
-                            label: '介绍(区别、错误码)',
+                            label: '介绍（区别、错误码）',
                         },
                         'SDK/Service/serviceToken',
                         'SDK/Service/checkAddress'
