@@ -14,7 +14,7 @@ const config = {
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
     organizationName: 'IdeaLightLabs', // Usually your GitHub org/user name.
-    projectName: 'AnyWeb-JS-SDK', // Usually your repo name.
+    projectName: 'AnyWeb-WiKi', // Usually your repo name.
 
     presets: [
         [
@@ -24,10 +24,11 @@ const config = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
-                    // editUrl: 'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK',
+                    editUrl: 'https://github.com/IdeaLightLabs/AnyWeb-WiKi',
                 },
                 blog: {
                     showReadingTime: true,
+                    editUrl: 'https://github.com/IdeaLightLabs/AnyWeb-WiKi',
                     // Please change this to your repo.
                     // editUrl:
                     //     'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK',
