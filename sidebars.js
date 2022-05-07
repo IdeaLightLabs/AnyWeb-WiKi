@@ -34,7 +34,12 @@ const sidebars = {
                 {
                     type: 'category',
                     label: 'OAuth 接口',
-                    items: ['SDK/OAuth/intro',
+                    items: [
+                        {
+                            type: 'doc',
+                            id: 'SDK/OAuth/intro',
+                            label: '介绍（区别、错误码）',
+                        },
                         'SDK/OAuth/accessToken',
                         'SDK/OAuth/userInfo',
                     ],
@@ -42,7 +47,12 @@ const sidebars = {
                 {
                     type: 'category',
                     label: '服务端接口',
-                    items: ['SDK/Service/intro',
+                    items: [
+                        {
+                            type: 'doc',
+                            id: 'SDK/Service/intro',
+                            label: '介绍（区别、错误码）',
+                        },
                         'SDK/Service/serviceToken',
                         'SDK/Service/checkAddress'
                     ]
