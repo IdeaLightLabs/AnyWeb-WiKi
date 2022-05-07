@@ -24,11 +24,11 @@ const config = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
-                    editUrl: 'https://github.com/IdeaLightLabs/AnyWeb-WiKi',
+                    editUrl: 'https://github.com/IdeaLightLabs/AnyWeb-WiKi/blob/master',
                 },
                 blog: {
                     showReadingTime: true,
-                    editUrl: 'https://github.com/IdeaLightLabs/AnyWeb-WiKi',
+                    editUrl: 'https://github.com/IdeaLightLabs/AnyWeb-WiKi/blob/master',
                     // Please change this to your repo.
                     // editUrl:
                     //     'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK',
