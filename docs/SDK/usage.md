@@ -109,62 +109,6 @@ provider.request({
 })
 ```
 
-### 发起交易（❗️文档正在更新中）
-
-当需要进行签名交易时，调用 `cfx_sendTransaction` 并传入交易参数即可。
-
-`gatewayPayload` 参数为自定义参数。该字段用于在开放平台填写的网关地址中作为参数，该字段功能可自定义。
-
-如发起CFX转账交易:
-
-```javascript
-/**
- * 发起交易
- */
-provider.request({
-  method: 'cfx_sendTransaction',
-  params: [{
-    from: 'cfx:xxxxxx',
-    to: 'cfx:xxxxxx',
-    value: '0x1',
-  },
-    {
-      // gatewayPayload 可选
-    }]
-}).then((result) => {
-  console.log('交易hash', result)
-}).catch((e) => {
-  console.error('调用失败', e)
-})
-```
-
-### 部署合约
-
-需要部署合约时，通过调用 `cfx_sendTransaction` 并传入合约的参数即可，其中 `data`
-参数通过 [js-conflux-sdk](https://docs.confluxnetwork.org/js-conflux-sdk/docs/interact_with_contract#how-to-deploy-a-contract)
-获取。
-
-```javascript
-/**
- * 部署合约
- * @return {string} 合约地址 0xAAAAAAA
- */
-const {Conflux} = require('js-conflux-sdk');
-const {abi, bytecode} = MINI_ERC20;
-const contract = conflux.Contract({abi, bytecode});
-const contractData = contract.constructor('MiniERC20', 18, 'MC', 10000).data
-provider.request({
-  method: 'cfx_sendTransaction', params: [{
-    from: 'cfx:xxxxxx',
-    data: contractData,
-  }]
-}).then((result) => {
-  console.log("合约地址", result)
-}).catch((e) => {
-  console.error('调用失败', e)
-})
-```
-
 ### 调用合约
 
 当需要调用合约方法时候，通过调用 `cfx_sendTransaction` 并将参数 `to` 设置为合约地址及 `data` 设置为调用合约的数据即可。
