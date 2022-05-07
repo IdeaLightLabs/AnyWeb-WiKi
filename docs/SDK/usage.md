@@ -11,6 +11,7 @@
 | cfx_sendTransaction  | 发起 Conflux 合约调用     |
 | anyweb_importAccount | 将账户地址导入 AnyWeb 中    |
 | anyweb_identify      | 跳转到 AnyWeb 进行实名认证   |
+| exit_accounts        | 取消授权                |
 | anyweb_version       | 获取 AnyWeb JS-SDK 版本 |
 | anyweb_home          | 启动 AnyWeb 首页        |
 
@@ -39,22 +40,22 @@
  * 指定网络的获取账户授权
  */
 provider.request({
-  method: 'cfx_accounts',
-  params: [{
-    availableNetwork: [1, 1029],
-    scopes: ['baseInfo', 'identity'],
-  }],
+    method: 'cfx_accounts',
+    params: [{
+        availableNetwork: [1, 1029],
+        scopes: ['baseInfo', 'identity'],
+    }],
 }).then((data) => {
-  const {chainId, networkId, address, code} = data
-  console.log(
-    'DApp 获取到的授权结果',
-    chainId,
-    networkId,
-    address,
-    code
-  )
+    const {chainId, networkId, address, code} = data
+    console.log(
+        'DApp 获取到的授权结果',
+        chainId,
+        networkId,
+        address,
+        code
+    )
 }).catch((e) => {
-  console.error('调用失败', e)
+    console.error('调用失败', e)
 })
 ```
 
@@ -76,17 +77,18 @@ provider.request({
  * 取消授权
  */
 provider.request({
-  method: 'exit_accounts'
+    method: 'exit_accounts'
 }).then(() => {
-  // 后续操作
+    // 后续操作
 }).catch((e) => {
-  console.error('调用失败', e)
+    console.error('调用失败', e)
 })
 ```
 
 ### 实名认证 `anyweb_identify`
 
-一些场景下需要用户的实名信息，可以先通过 [用户信息获取](https://wiki.anyweb.cc/docs/OAuth/userInfo) 接口尝试获取用户实名信息。如果用户未进行实名认证，可通过以下代码跳转到 AnyWeb 进行实名认证。认证成功后可再次尝试通过 [用户信息获取](https://wiki.anyweb.cc/docs/OAuth/userInfo) 接口获取实名认证信息。
+一些场景下需要用户的实名信息，可以先通过 [用户信息获取](https://wiki.anyweb.cc/docs/OAuth/userInfo) 接口尝试获取用户实名信息。如果用户未进行实名认证，可通过以下代码跳转到 AnyWeb
+进行实名认证。认证成功后可再次尝试通过 [用户信息获取](https://wiki.anyweb.cc/docs/OAuth/userInfo) 接口获取实名认证信息。
 
 返回值：
 
@@ -99,13 +101,13 @@ provider.request({
  * 取消授权
  */
 provider.request({
-  method: 'anyweb_identify',
-  params: []
+    method: 'anyweb_identify',
+    params: []
 }).then((data) => {
-  console.log('result', data.result)
-  // 后续操作
+    console.log('result', data.result)
+    // 后续操作
 }).catch((e) => {
-  console.error('调用失败', e)
+    console.error('调用失败', e)
 })
 ```
 
@@ -120,15 +122,15 @@ provider.request({
  */
 const data = contract.balanceOf('cfx:xxxxxx').data   //contract 为Conflux JS SDK中的合约对象， 见部署合约例子中的contract 
 provider.request({
-  method: 'cfx_sendTransaction', params: [{
-    from: 'cfx:xxxxxx',
-    to: 'cfx:xxxxxx',
-    data: data,
-  }]
+    method: 'cfx_sendTransaction', params: [{
+        from: 'cfx:xxxxxx',
+        to: 'cfx:xxxxxx',
+        data: data,
+    }]
 }).then((result) => {
-  console.log("调用结果", result)
+    console.log("调用结果", result)
 }).catch((e) => {
-  console.error('调用失败', e)
+    console.error('调用失败', e)
 })
 ```
 
@@ -156,15 +158,15 @@ provider.request({
  * @return {string[]} 地址列表 ['cfx:xxxxxx', 'cfx:xxxxxx']
  */
 provider.request({
-  method: 'anyweb_importAccount',
-  params: [{
-    address: ['cfx:xxxxxx', 'cfx:xxxxxx'],
-    addressName: ['账户1', '账户2'], // 选填
-  }],
+    method: 'anyweb_importAccount',
+    params: [{
+        address: ['cfx:xxxxxx', 'cfx:xxxxxx'],
+        addressName: ['账户1', '账户2'], // 选填
+    }],
 }).then((result) => {
-  console.log('导入的地址列表', result)
+    console.log('导入的地址列表', result)
 }).catch((e) => {
-  console.error('调用失败', e)
+    console.error('调用失败', e)
 })
 ```
 
@@ -218,10 +220,10 @@ provider.request({
  * @return {string} 版本号 1.0.8
  */
 provider.request({
-  method: 'anyweb_version',
+    method: 'anyweb_version',
 }).then((result) => {
-  console.log('AnyWeb JS SDK版本号', result)
+    console.log('AnyWeb JS SDK版本号', result)
 }).catch((e) => {
-  console.error('调用失败', e)
+    console.error('调用失败', e)
 })
 ```
