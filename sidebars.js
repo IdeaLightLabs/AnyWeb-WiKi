@@ -45,24 +45,24 @@ const sidebars = {
                     ],
                 },
                 {
-                    type: 'category',
-                    label: '服务端接口',
-                    items: [
-                        {
-                            type: 'doc',
-                            id: 'SDK/Service/intro',
-                            label: '介绍（区别、错误码）',
-                        },
-                        'SDK/Service/serviceToken',
-                        'SDK/Service/checkAddress'
-                    ]
-                },
-                {
                     type: 'doc',
                     id: 'SDK/CHANGELOG',
                     label: '更新日志',
                 }
             ],
+        },
+        {
+            type: 'category',
+            label: '服务端能力',
+            items: [
+                {
+                    type: 'doc',
+                    id: 'Service/intro',
+                    label: '介绍（区别、错误码）',
+                },
+                'Service/serviceToken',
+                'Service/checkAddress'
+            ]
         },
     ],
 };
