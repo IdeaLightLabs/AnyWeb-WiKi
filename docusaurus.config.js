@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
     title: 'AnyWeb Wiki',
     tagline: '强合规的区块链钱包',
-    url: 'https://anyweb.cc',
+    url: 'https://wiki.anyweb.cc',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
