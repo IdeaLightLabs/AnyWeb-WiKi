@@ -235,8 +235,8 @@ provider.request({
 
 ```javascript
 /**
- * 获取版本号
- * @return {string} 版本号 1.0.8
+ * 获取是否登录
+ * @return {bool} 是否登录 true/false
  */
 provider.request({
     method: 'anyweb_loginstate', params: []
