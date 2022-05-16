@@ -14,6 +14,7 @@
 | exit_accounts        | 取消授权                |
 | anyweb_version       | 获取 AnyWeb JS-SDK 版本 |
 | anyweb_home          | 启动 AnyWeb 首页        |
+| anyweb_loginstate          | 判断 AnyWeb 用户是否登录    |
 
 ### 获取授权 `cfx_accounts`
 
@@ -224,6 +225,24 @@ provider.request({
 }).then((result) => {
     console.log('AnyWeb JS SDK版本号', result)
 }).catch((e) => {
+    console.error('调用失败', e)
+})
+```
+
+### 获取登录状态
+
+返回当前 AnyWeb 的用户是否登录。
+
+```javascript
+/**
+ * 获取版本号
+ * @return {string} 版本号 1.0.8
+ */
+provider.request({
+    method: 'anyweb_loginstate', params: []
+}).then((result) => {
+    console.log('登录状态', result)
+}).catch((err) => {
     console.error('调用失败', e)
 })
 ```

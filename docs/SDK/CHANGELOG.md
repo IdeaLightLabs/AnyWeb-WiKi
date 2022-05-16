@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
+### [1.1.11](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.1.10...v1.1.11) (2022-05-16)
+
+
+### Features
+
+* **support check login state:** support check login state and add silent mode of identify ([a391500](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/a391500b2704a7c565d289e897a73bbb9f6b49b3))
+
+### [1.1.10](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.1.9...v1.1.10) (2022-05-09)
+
+
+### Features
+
+* **silent auth:** support auth account with silent mode ([43352e3](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/43352e3051eabc7b78bff2099a6f93c12f751f83))
+
+
+### Bug Fixes
+
+* **example DApp:** fix the problem of example DApp ([4f9d3c3](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/commit/4f9d3c36e96ec7ec192afd78e393b50c5501724f))
+
+
 ### [1.1.9](https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/compare/v1.1.7...v1.1.9) (2022-05-09)
 
 
