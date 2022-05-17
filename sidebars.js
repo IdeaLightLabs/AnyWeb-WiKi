@@ -61,7 +61,8 @@ const sidebars = {
                     label: '介绍（区别、错误码）',
                 },
                 'Service/serviceToken',
-                'Service/checkAddress'
+                'Service/checkAddress',
+                'Service/checkAddresses',
             ]
         },
     ],

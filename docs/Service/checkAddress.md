@@ -1,6 +1,12 @@
-# 用户地址检查
+# 用户地址检查（旧）
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
+
+:::caution 说明
+
+即将移除该接口，请使用 [`checkAddresses`](https://wiki.anyweb.cc/docs/Service/checkAddresses) 接口。
+
+:::
 
 ## 基本介绍
 
