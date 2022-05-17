@@ -63,7 +63,6 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
     "83c26fe9-7b48-4400-bfd0-224788e4e858": [
       "cfx:aarcpvtr86ub5f9dhxgvxhs12gupday18jgk5sdx77"
     ],
-    "05658ea3-6727-4edd-b888-723bcf6168d3": [],
     "08f097cd-2955-494e-bb40-ccb3f45543ed": [
       "0x111cf7e96cc45505cfa35e01ecab3476e12afd38",
       "cfx:aarcpvtr86ub5f9dhxgvxhs12gupday18jgk5sdx77"
