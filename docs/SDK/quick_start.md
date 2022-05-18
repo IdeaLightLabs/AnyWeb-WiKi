@@ -1,4 +1,5 @@
 # 快速开始
+
 > 所有代码块中包含 `$` 代表终端/命令行操作
 
 ## AnyWeb JS SDK
@@ -27,6 +28,15 @@ $ npm install --save @idealight-labs/anyweb-js-sdk
 
 ## 引用方法
 
+:::info 提示
+
+AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请在页面初始化时实例化 `Provider` 并且立即调用 `on('ready', function)` 方法来设置 SDK
+初始化完成的回调，请勿在 SDK 初始化完成前调用任何 SDK 方法。
+
+同时 `Provider` 也提供了静态属性 `Provider.ready` 用于判断 SDK 是否初始化完成，请结合项目需求使用。
+
+:::
+
 ### ESM
 
 ```javascript
@@ -45,7 +55,7 @@ conflux.provider = new Provider({
 ```html
 
 <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@idealight-labs/anyweb-js-sdk@1.1.11/dist/anyweb-js-sdk.umd.min.js"></script>
+        src="https://cdn.jsdelivr.net/npm/@idealight-labs/anyweb-js-sdk@1.2.0/dist/anyweb-js-sdk.umd.min.js"></script>
 
 <script type="text/javascript">
     conflux.provider = new window.AnyWeb.Provider({

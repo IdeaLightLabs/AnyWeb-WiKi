@@ -1,5 +1,14 @@
 # Provider API
 
+:::info 提示
+
+AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请在页面初始化时实例化 `Provider` 并且立即调用 `on('ready', function)` 方法来设置 SDK
+初始化完成的回调，请勿在 SDK 初始化完成前调用任何 SDK 方法。
+
+同时 `Provider` 也提供了静态属性 `Provider.ready` 用于判断 SDK 是否初始化完成，请结合项目需求使用。
+
+:::
+
 ## Conflux
 
 ### Provider API提供的功能
@@ -244,5 +253,35 @@ provider.request({
     console.log('登录状态', result)
 }).catch((err) => {
     console.error('调用失败', e)
+})
+```
+
+### SDK 初始化完成回调
+
+```javascript
+conflux.provider = new Provider({
+    logger: console,
+    appId: '从open.anyweb.cc拿到的AppId',
+})
+provider.on('ready', () => {
+    console.log('SDK 初始化完成 可以调用接口方法')
+    provider.request({
+        method: 'cfx_accounts',
+        params: [{
+            availableNetwork: [1, 1029],
+            scopes: ['baseInfo', 'identity'],
+        }],
+    }).then((data) => {
+        const {chainId, networkId, address, code} = data
+        console.log(
+            'DApp 获取到的授权结果',
+            chainId,
+            networkId,
+            address,
+            code
+        )
+    }).catch((e) => {
+        console.error('调用失败', e)
+    })
 })
 ```
