@@ -16,32 +16,21 @@ const config = {
     organizationName: 'IdeaLightLabs', // Usually your GitHub org/user name.
     projectName: 'AnyWeb-WiKi', // Usually your repo name.
 
-    presets: [
-        [
-            'classic',
-            /** @type {import('@docusaurus/preset-classic').Options} */
-            ({
-                docs: {
-                    sidebarPath: require.resolve('./sidebars.js'),
-                    // Please change this to your repo.
-                    editUrl: 'https://github.com/IdeaLightLabs/AnyWeb-WiKi/blob/master',
-                },
-                blog: {
-                    showReadingTime: true,
-                    editUrl: 'https://github.com/IdeaLightLabs/AnyWeb-WiKi/blob/master',
-                    // Please change this to your repo.
-                    // editUrl:
-                    //     'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK',
-                },
-                theme: {
-                    customCss: require.resolve('./src/css/custom.css'),
-                },
-            }),
-        ],
-    ],
-
-    themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    presets: [['classic', /** @type {import('@docusaurus/preset-classic').Options} */
+        ({
+            docs: {
+                sidebarPath: require.resolve('./sidebars.js'), // Please change this to your repo.
+                editUrl: 'https://github.com/IdeaLightLabs/AnyWeb-WiKi/blob/master',
+            }, blog: {
+                showReadingTime: true,
+                editUrl: 'https://github.com/IdeaLightLabs/AnyWeb-WiKi/blob/master', // Please change this to your repo.
+                // editUrl:
+                //     'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK',
+            }, theme: {
+                customCss: require.resolve('./src/css/custom.css'),
+            },
+        }),],],
+    themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
             /* algolia: {
                  // The application ID provided by Algolia
@@ -63,69 +52,55 @@ const config = {
 
                  //... other Algolia params
              },*/
-            navbar: {
-                title: 'AnyWeb 开发文档',
-                logo: {
-                    alt: 'My Site Logo',
-                    src: 'img/logo.svg',
-                    width: 17
-                },
-                items: [
-                    {
-                        type: 'doc',
-                        docId: 'SDK/intro',
-                        position: 'left',
-                        label: '文档',
-                    },
-                    {
-                        href: 'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/issues',
-                        label: '反馈',
-                        position: 'left'
-                    },
-                    {
-                        href: 'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK',
-                        label: 'GitHub',
-                        position: 'right',
-                    },
-                ],
+            algolia: {
+                // The application ID provided by Algolia
+                appId: '4QLAZNSBG4',
+
+                // Public API key: it is safe to commit it
+                apiKey: '1f02af916e0f129d8bef70594007dbad',
+
+                indexName: 'anyweb',
+
+                // Optional: see doc section below
+                contextualSearch: true,
+
+                // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+                // externalUrlRegex: 'external\\.com|domain\\.com',
+
+                // Optional: Algolia search parameters
+                // searchParameters: {},
+
+                //... other Algolia params
+            }, navbar: {
+                title: 'AnyWeb 开发文档', logo: {
+                    alt: 'My Site Logo', src: 'img/logo.svg', width: 17
+                }, items: [{
+                    type: 'doc', docId: 'SDK/intro', position: 'left', label: '文档',
+                }, {
+                    href: 'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/issues', label: '反馈', position: 'left'
+                }, {
+                    href: 'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK', label: 'GitHub', position: 'right',
+                },],
             },
+
             footer: {
                 style: 'dark',
-                links: [
-                    {
-                        title: 'Docs',
-                        items: [
-                            {
-                                label: 'Tutorial',
-                                to: '/docs/SDK/intro',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'Community',
-                        items: [
-                            {
-                                label: 'Discussions',
-                                href: 'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/discussions',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'More',
-                        items: [
-                            {
-                                label: 'GitHub',
-                                href: 'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK',
-                            },
-                        ],
-                    },
-                ],
+                links: [{
+                    title: 'Docs', items: [{
+                        label: 'Tutorial', to: '/docs/SDK/intro',
+                    },],
+                }, {
+                    title: 'Community', items: [{
+                        label: 'Discussions', href: 'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/discussions',
+                    },],
+                }, {
+                    title: 'More', items: [{
+                        label: 'GitHub', href: 'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK',
+                    },],
+                },],
                 copyright: `Copyright © ${new Date().getFullYear()} IdeaLight (Hangzhou) Technology Co., Ltd. Built with Docusaurus.`,
-            },
-            prism: {
-                theme: lightCodeTheme,
-                darkTheme: darkCodeTheme,
-                additionalLanguages: ['java'],
+            }, prism: {
+                theme: lightCodeTheme, darkTheme: darkCodeTheme, additionalLanguages: ['java'],
             },
         }),
 };
