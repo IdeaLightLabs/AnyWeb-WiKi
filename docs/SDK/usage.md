@@ -16,14 +16,14 @@ AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请�
 | method               | 说明                  |
 |----------------------|---------------------|
 | cfx_accounts         | 获取 Conflux 账户授权     |
-| exit_accounts        | 取消 Conflux 账户授权     |
+| exit_accounts        | 退出登录                |
 | cfx_sendTransaction  | 发起 Conflux 合约调用     |
 | anyweb_importAccount | 将账户地址导入 AnyWeb 中    |
 | anyweb_identify      | 跳转到 AnyWeb 进行实名认证   |
-| exit_accounts        | 取消授权                |
+| anyweb_logout        | 取消钱包账户授权            |
 | anyweb_version       | 获取 AnyWeb JS-SDK 版本 |
 | anyweb_home          | 启动 AnyWeb 首页        |
-| anyweb_loginstate          | 判断 AnyWeb 用户是否登录    |
+| anyweb_loginstate    | 判断 AnyWeb 用户是否登录    |
 
 ### 获取授权 `cfx_accounts`
 
