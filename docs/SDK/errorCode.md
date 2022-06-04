@@ -12,12 +12,13 @@
 interface ProviderRpcError extends Error {
     code: number;
     data?: unknown;
+    message?: string
 }
 ```
 
 * `code`: 错误码, 具体见下
-* `data`: 错误数据, 可选
-* `message`: 错误信息, 可选
+* `data`: 错误数据, 一般为对象类型, 可选
+* `message`: 错误可读性信息, 可选
 
 ## 错误码
 
