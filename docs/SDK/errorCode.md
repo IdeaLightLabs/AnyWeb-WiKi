@@ -22,6 +22,13 @@ interface ProviderRpcError extends Error {
 
 ## 错误码
 
+
+:::caution 注意
+
+负数的错误码如 `-32015` 为 Conflux 错误码, 请参考 [Conflux 错误码](https://developer.confluxnetwork.org/sending-tx/en/transaction_send_common_error) 排查和解决。
+
+:::
+
 | 错误                   | 错误码  | 类型      | 内容                             |
 |----------------------|------|---------|--------------------------------|
 | UserRejectedRequest  | 4001 | 用户操作异常  | 用户拒绝该请求                        |
