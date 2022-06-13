@@ -17,6 +17,7 @@ AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请�
 | -------------------- | --------------------------------------------------- |
 | cfx_accounts         | 获取 Conflux 账户授权                               |
 | cfx_sendTransaction  | 发起 Conflux 合约调用                               |
+| cfx_signTypedData    | 发起 Conflux 签名       |
 | anyweb_importAccount | 将账户地址导入 AnyWeb 中                            |
 | anyweb_identify      | 跳转到 AnyWeb 进行实名认证                          |
 | exit_accounts        | 取消钱包账户授权 (不推荐将废弃, 目前全版本暂时兼容) |
@@ -249,6 +250,55 @@ provider.request({
         to: 'cfx:aargcrcwsaztcgcne0gb56zk1f08t9mdjpt9v08dep',
         data: data,
     }]
+}).then((result) => {
+    console.log("调用结果", result)
+}).catch((e) => {
+    console.error('调用失败', e)
+})
+```
+
+### 签名
+
+部分场景下需要获取用户签名时，通过调用 `cfx_signTypedData` 可获得签名。
+
+:::info 参考文档
+
+Conflux sign 官方文档: [https://docs.confluxnetwork.org/js-conflux-sdk/docs/sign_methods](https://docs.confluxnetwork.org/js-conflux-sdk/docs/sign_methods)
+
+CIP-23 标准: [https://github.com/Conflux-Chain/CIPs/blob/2d9fdbdb08f66f705348669a6cd85e2d53509e97/CIPs/cip-23.md](https://github.com/Conflux-Chain/CIPs/blob/2d9fdbdb08f66f705348669a6cd85e2d53509e97/CIPs/cip-23.md)
+:::
+
+参数：
+
+| index | 类型      | 默认值   | 说明                           |
+|-------|---------|-------|------------------------------|
+| 0     | String  | 无     | 对 `data` 签名的区块链账户地址          |
+| 1     | String  | 无     | JSON序列化后的 `data` （CIP-23 标准） |
+| 2     | Boolean | false | 是否以rsv格式返回                   |
+
+返回值（默认）：
+
+| 键名        | 类型     | 说明        |
+|-----------|--------|-----------|
+| signature | String | 十六进制格式的签名 |
+| recovery  | Number | 用于公钥恢复    |
+
+返回值（以rsv格式返回）：
+
+| 键名  | 类型     | 说明     |
+|-----|--------|--------|
+| r   | String | 十六进制格式 |
+| s   | String | 十六进制格式 |
+| v   | Number | 用于公钥恢复 |
+
+```javascript
+/**
+ * 签名
+ */
+const from = 'cfxtest:aan5d7p1y1j3gkn3v3wgref76ae69kx81y1b5uckjz'
+const data = JSON.stringify({...})   // CIP-23 标准格式数据
+provider.request({
+    method: 'cfx_signTypedData', params: [from, data]
 }).then((result) => {
     console.log("调用结果", result)
 }).catch((e) => {
