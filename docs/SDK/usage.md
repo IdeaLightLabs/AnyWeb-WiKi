@@ -268,7 +268,7 @@ Conflux sign 官方文档: [https://docs.confluxnetwork.org/js-conflux-sdk/docs/
 CIP-23 标准: [https://github.com/Conflux-Chain/CIPs/blob/2d9fdbdb08f66f705348669a6cd85e2d53509e97/CIPs/cip-23.md](https://github.com/Conflux-Chain/CIPs/blob/2d9fdbdb08f66f705348669a6cd85e2d53509e97/CIPs/cip-23.md)
 :::
 
-参数：
+`params` 参数：
 
 | index | 类型      | 默认值   | 说明                           |
 |-------|---------|-------|------------------------------|
@@ -295,10 +295,10 @@ CIP-23 标准: [https://github.com/Conflux-Chain/CIPs/blob/2d9fdbdb08f66f7053486
 /**
  * 签名
  */
-const from = 'cfxtest:aan5d7p1y1j3gkn3v3wgref76ae69kx81y1b5uckjz'
+const from = 'cfxtest:aan5d7p1y1j3gkn3v3wgref76ae69kx81y1b5uckjz' // 发起签名的账户地址
 const data = JSON.stringify({...})   // CIP-23 标准格式数据
 provider.request({
-    method: 'cfx_signTypedData', params: [from, data]
+    method: 'cfx_signTypedData', params: [from, data, false]
 }).then((result) => {
     console.log("调用结果", result)
 }).catch((e) => {
