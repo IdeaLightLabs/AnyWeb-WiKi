@@ -234,6 +234,12 @@ provider.request({
 | RequestError         | 7000   | 其他           | 请求错误, 具体信息见 `Message` 和 `data` |
 | SendTransactionError | 7001   | 其他           | 发送交易失败                             |
 
+:::info 参考文档
+
+Conflux 交易发送失败的常见错误及原因: [http://wiki.conflux123.xyz/books/faqs/chapter/96da2](http://wiki.conflux123.xyz/books/faqs/chapter/96da2)
+
+:::
+
 #### 实例
 
 当需要调用合约方法时候，通过调用 `cfx_sendTransaction` 并将参数 `to` 设置为合约地址及 `data` 设置为调用合约的数据即可。
