@@ -52,12 +52,13 @@ AnyWeb 可以在通过用户授权后获取到用户的相关信息，具体的�
 
 #### 具体参数内容
 
-| 参数名         | 类型     | 备注                            |
-|-------------|--------|-------------------------------|
-| appid       | String | 从 open.anyweb.cc 拿到的 `appid`  |
-| secret      | String | 从 open.anyweb.cc 拿到的 `secret` |
-| accessToken | String | `accessToken`                 |
-| unionid     | String | `unionid`                     |
+| 参数名         | 类型             | 是否必填 | 备注                                                           |
+|-------------|----------------|------|--------------------------------------------------------------|
+| appid       | String         | 是    | 从 open.anyweb.cc 拿到的 `appid`                                 |
+| secret      | String         | 是    | 从 open.anyweb.cc 拿到的 `secret`                                |
+| accessToken | String         | 是    | `accessToken`                                                |
+| unionid     | String         | 是    | `unionid`                                                    |
+| scopes      | Array<String\> | 否    | 请求的数据范围，默认开放平台申请的全部权限。若该次请求只想获得baseInfo数据,只需填写`['baseInfo']` |
 
 #### 返回值
 

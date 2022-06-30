@@ -65,6 +65,17 @@ const sidebars = {
                 'Service/checkAddresses',
             ]
         },
+        {
+            type: 'category',
+            label: '产品计费',
+            items: [
+                {
+                    type: 'doc',
+                    id: 'Billing/index',
+                    label: '计费概述',
+                },
+            ]
+        },
     ],
 };
 
