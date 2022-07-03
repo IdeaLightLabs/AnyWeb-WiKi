@@ -6,7 +6,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 2022 年 7 月 6 日 0:00 AM （北京时间 GMT+8）开始实施
 
-充值请在[开放平台/财务管理](https://open.anyweb.cc/finance/recharge)查询余额及进行充值。
+请在[开放平台/财务管理](https://open.anyweb.cc/finance/recharge)查询、充值余额。
 
 :::
 
