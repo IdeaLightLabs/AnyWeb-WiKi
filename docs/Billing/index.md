@@ -6,6 +6,8 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 2022 年 7 月 6 日 0:00 AM （北京时间 GMT+8）开始实施
 
+充值请在[开放平台/财务管理](https://open.anyweb.cc/finance/recharge)查询余额及进行充值。
+
 :::
 
 ## 基本介绍
@@ -69,4 +71,3 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 ## 其他说明
 * 对于公益、慈善、教育、学术等非营利性项目不收取费用，项目方可通过 [AnyWeb 首页](https://anyweb.cc)下方生态合作二维码联系客服申请赞助额度。
-* 充值请在[开放平台/财务管理](https://open.anyweb.cc/finance/recharge)进行充值。
