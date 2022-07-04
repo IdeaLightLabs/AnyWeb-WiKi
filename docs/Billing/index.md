@@ -30,9 +30,9 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 * 调用 `cfx_accounts` 功能，非静默授权后获取 code。
 
-* 使用上一步获取的 code ，并调用 Oauth 的 accessToken 接口，获取 accessToken。
+* 使用上一步获取的 code ，并调用 OAuth 的 accessToken 接口，获取 accessToken。
 
-* 调用 Oauth 的 userInfo 接口，获取用户信息。
+* 调用 OAuth 的 userInfo 接口，获取用户信息。
 
 #### 服务定价
 |     | 每月使用量≤1000 | 每月使用量>1000 |
@@ -56,7 +56,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 次月完成统计后可申请发票。
 
 计费统计规则说明：
-* 调用 Oauth 的 userInfo 接口，获取用户信息时，若返回值包含了用户实名信息且 `level` > 0，则会计费一次。若不想在一次请求中获取到用户实名信息，请在接口参数中增加 `scopes` 参数来限制获取的信息。
+* 调用 OAuth 的 userInfo 接口，获取用户信息时，若返回值包含了用户实名信息且 `level` > 0，则会计费一次。若不想在一次请求中获取到用户实名信息，请在接口参数中增加 `scopes` 参数来限制获取的信息。
 
 #### 服务定价
 |     | 每月使用量≤1000 | 每月使用量>1000 |
