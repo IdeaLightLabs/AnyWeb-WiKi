@@ -1,4 +1,4 @@
-# 用户地址检查（新）
+# 用户地址检查
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
