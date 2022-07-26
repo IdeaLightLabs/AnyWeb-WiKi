@@ -57,7 +57,7 @@ const sidebars = {
             items: [
                 {
                     type: 'doc',
-                    id: 'SDK/OAuth/intro',
+                    id: 'OAuth/intro',
                     label: '介绍（区别、错误码）',
                 },
                 'OAuth/accessToken',
