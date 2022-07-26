@@ -55,7 +55,7 @@ conflux.provider = new Provider({
 ```html
 
 <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@idealight-labs/anyweb-js-sdk@1.2.2/dist/anyweb-js-sdk.umd.min.js"></script>
+        src="https://cdn.jsdelivr.net/npm/@idealight-labs/anyweb-js-sdk@1.3.0/dist/anyweb-js-sdk.umd.min.js"></script>
 
 <script type="text/javascript">
     conflux.provider = new window.AnyWeb.Provider({
