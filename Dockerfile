@@ -2,13 +2,9 @@ FROM node:16.14.0-alpine as builder
 
 WORKDIR /usr/src/app
 
-ADD package.json ./
-
-RUN yarn
-
 COPY . .
 
-RUN yarn build
+RUN yarn && yarn build
 
 FROM nginx:latest as prod
 
