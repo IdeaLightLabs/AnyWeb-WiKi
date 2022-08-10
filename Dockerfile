@@ -4,11 +4,11 @@ WORKDIR /usr/src/app
 
 ADD package.json ./
 
-RUN npm install --registry=https://registry.npm.taobao.org --profiler_binary_host_mirror=https://npm.taobao.org/mirrors/node-inspector/
+RUN yarn
 
 COPY . .
 
-RUN npm run build
+RUN yarn build
 
 FROM nginx:latest as prod
 
