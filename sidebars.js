@@ -32,19 +32,6 @@ const sidebars = {
                     label: 'SDK 接口',
                 },
                 {
-                    type: 'category',
-                    label: 'OAuth 接口',
-                    items: [
-                        {
-                            type: 'doc',
-                            id: 'SDK/OAuth/intro',
-                            label: '介绍（区别、错误码）',
-                        },
-                        'SDK/OAuth/accessToken',
-                        'SDK/OAuth/userInfo',
-                    ],
-                },
-                {
                     type: 'doc',
                     id: 'SDK/CHANGELOG',
                     label: '更新日志',
@@ -53,7 +40,7 @@ const sidebars = {
         },
         {
             type: 'category',
-            label: '服务端能力',
+            label: 'Service 接口',
             items: [
                 {
                     type: 'doc',
@@ -61,9 +48,21 @@ const sidebars = {
                     label: '介绍（区别、错误码）',
                 },
                 'Service/serviceToken',
-                'Service/checkAddress',
                 'Service/checkAddresses',
             ]
+        },
+        {
+            type: 'category',
+            label: 'OAuth 接口',
+            items: [
+                {
+                    type: 'doc',
+                    id: 'OAuth/intro',
+                    label: '介绍（区别、错误码）',
+                },
+                'OAuth/accessToken',
+                'OAuth/userInfo',
+            ],
         },
         {
             type: 'category',

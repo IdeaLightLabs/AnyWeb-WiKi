@@ -2,13 +2,9 @@ FROM node:16.14.0-alpine as builder
 
 WORKDIR /usr/src/app
 
-ADD package.json ./
-
-RUN npm install --registry=https://registry.npm.taobao.org --profiler_binary_host_mirror=https://npm.taobao.org/mirrors/node-inspector/
-
 COPY . .
 
-RUN npm run build
+RUN yarn && yarn build
 
 FROM nginx:latest as prod
 

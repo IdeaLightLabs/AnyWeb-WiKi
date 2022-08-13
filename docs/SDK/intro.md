@@ -36,7 +36,6 @@ Features:
 * [服务端能力](https://wiki.anyweb.cc/docs/Service/intro)
     * [服务端能力介绍](https://wiki.anyweb.cc/docs/Service/intro)
     * [serviceToken 获取](https://wiki.anyweb.cc/docs/Service/serviceToken)
-    * [检查地址](https://wiki.anyweb.cc/docs/Service/checkAddress)
     * [批量检查地址](https://wiki.anyweb.cc/docs/Service/checkAddresses)
 
 前往[ 官网文档 ](https://wiki.anyweb.cc)了解更多
