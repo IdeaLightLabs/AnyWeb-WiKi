@@ -131,5 +131,10 @@ AnyWeb 的诞生承载着产品团队对于中国 Web3 时代的无限美好期�
 
 如有合作需求或者任何 AnyWeb 相关的问题，都可扫码联系，谢谢。
 
-<img alt="AnyWeb"
+<img alt="AnyWeb" width="200" height="200"
 src="https://anyweb.oss-cn-hangzhou.aliyuncs.com/contact-qrcode.jpg"/>
+
+如有开发接入相关技术问题，可下方扫码加入开发者社群进行交流。
+
+<img alt="AnyWeb" width="200" height="200"
+src="https://anyweb.oss-cn-hangzhou.aliyuncs.com/dev-join-code.png"/>
