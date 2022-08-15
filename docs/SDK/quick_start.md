@@ -42,7 +42,7 @@ AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请�
 ```javascript
 import {Provider} from '@idealight-labs/anyweb-js-sdk';
 
-conflux.provider = new Provider({
+const provider = new Provider({
     logger: console,
     appId: '从open.anyweb.cc拿到的AppId',
 })
@@ -58,7 +58,7 @@ conflux.provider = new Provider({
         src="https://cdn.jsdelivr.net/npm/@idealight-labs/anyweb-js-sdk@1.3.2/dist/anyweb-js-sdk.umd.min.js"></script>
 
 <script type="text/javascript">
-    conflux.provider = new window.AnyWeb.Provider({
+    const provider = new window.AnyWeb.Provider({
         logger: console,
         appId: '从open.anyweb.cc拿到的AppId'
     })

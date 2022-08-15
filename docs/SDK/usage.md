@@ -473,7 +473,7 @@ provider.request({
 #### 实例
 
 ```javascript
-conflux.provider = new Provider({
+const provider = new Provider({
     logger: console,
     appId: '从open.anyweb.cc拿到的AppId',
 })
