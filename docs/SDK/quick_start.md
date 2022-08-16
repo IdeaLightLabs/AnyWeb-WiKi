@@ -119,22 +119,4 @@ provider.request({
 provider.request({
     method: 'anyweb_version',
 })
-
-/**
- * 获取账户改变事件
- */
-provider.on('accountsChanged', (accounts: string[]) => {
-    console.log("获取到新的账户信息", accounts)
-})
-
-/**
- * 链或网络变更事件
- */
-provider.on('chainChanged', (chainId: string) => {
-    // 这里需要手动获取下NetworkId
-    const networkId = provider.request({
-        method: 'cfx_netVersion',
-    })
-    console.log("链或网络变更事件", {chainId, networkId})
-})
 ```
