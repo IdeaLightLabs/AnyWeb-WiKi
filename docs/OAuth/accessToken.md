@@ -56,14 +56,14 @@ DApp 拿到了 `code` 后，后端需要自行通过 POST 请求指定接口换�
 
 #### 返回值
 
-| 参数名          | 类型     | 备注                                                                       |
-|--------------|--------|--------------------------------------------------------------------------|
-| unionid      | String | 用户的 `unionid`                                                            |
-| accessToken  | String | 换取到的 `accessToken`                                                       |
-| expiresIn    | Number | `accessToken` 有效时间                                                       |
-| refreshToken | Number | 用于更新 `accessToken` 的 `refreshToken`                                      |
-| expiresIn    | Number | `refreshToken` 过期时间戳                                                     |
-| scope        | String | `accessToken` 的[权限列表](https://wiki.anyweb.cc/docs/usage#conflux) , `,`隔开 |
+| 参数名           | 类型     | 备注                                                                       |
+|---------------|--------|--------------------------------------------------------------------------|
+| unionid       | String | 用户的 `unionid`                                                            |
+| accessToken   | String | 换取到的 `accessToken`                                                       |
+| expire        | Number | `accessToken` 有效时间（秒）                                                    |
+| refreshToken  | Number | 用于更新 `accessToken` 的 `refreshToken`                                      |
+| refreshExpire | Number | `refreshToken` 有效时间（秒）                                                   |
+| scope         | String | `accessToken` 的[权限列表](https://wiki.anyweb.cc/docs/usage#conflux) , `,`隔开 |
 
 ```json
 {
@@ -72,9 +72,9 @@ DApp 拿到了 `code` 后，后端需要自行通过 POST 请求指定接口换�
   "data": {
     "unionid": "fdf3db80-xxxx-xxxx-xxxx-e1060de07d80",
     "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX1hZjMyLWUxMDYwZGUwN2Q4MCIsImFwcGlkIjoiMWQxNDdjMDctNjM5Zi00YWI0LWFiNDktNzNkMWQ4OTkwOTk5IiwiaXNSZWZyZXNoIjpmYWxzZSwiaWF0IjoxNjXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.zKKYZcNTZ-PMSW6OgpIomai5IU1ehDYgxDw90RU8rRs",
-    "expiresIn": 7200,
+    "expire": 7200,
     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXQtYWYzMi1lMTA2MGRlMDdkODAiLCJhcHBpZCI6IjFkMTQ3YzA3LTYzOWYtNGFiNC1hYjQ5LTczZDFkODk5MDk5OSIsImlzUmVmcmVzaCI6dHJ1ZSwiaWF0IjoxNjXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.fHm7xf9CWAXbN3rlJ83ExAC1aW9kmK-N6FyvyqcYumA",
-    "refreshExpiresIn": 2592000,
+    "refreshExpire": 2592000,
     "scope": "baseInfo,identity"
   }
 }
@@ -181,7 +181,7 @@ public class main {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX1hZjMyLWUxMDYwZGUwN2Q4MCIsImFwcGlkIjoiMWQxNDdjMDctNjM5Zi00YWI0LWFiNDktNzNkMWQ4OTkwOTk5IiwiaXNSZWZyZXNoIjpmYWxzZSwiaWF0IjoxNjXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.zKKYZcNTZ-PMSW6OgpIomai5IU1ehDYgxDw90RU8rRs",
     "expire": 7200,
     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXQtYWYzMi1lMTA2MGRlMDdkODAiLCJhcHBpZCI6IjFkMTQ3YzA3LTYzOWYtNGFiNC1hYjQ5LTczZDFkODk5MDk5OSIsImlzUmVmcmVzaCI6dHJ1ZSwiaWF0IjoxNjXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.fHm7xf9CWAXbN3rlJ83ExAC1aW9kmK-N6FyvyqcYumA",
-    "refreshExpire": 1296000
+    "refreshExpire": 2592000
   }
 }
 ```
