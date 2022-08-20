@@ -13,6 +13,12 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 ## 具体过程
 
+:::caution 注意
+
+请使用 json 格式提交请求。
+
+:::
+
 ### 获取 Access Token
 
 见[获取 Access Token](https://wiki.anyweb.cc/docs/OAuth/accessToken)

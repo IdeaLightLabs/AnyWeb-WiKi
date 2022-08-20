@@ -8,6 +8,12 @@ ServiceToken 是开放平台相关接口的调用凭证。
 
 ## 具体过程
 
+:::caution 注意
+
+请使用 json 格式提交请求。
+
+:::
+
 ### 获取 ServiceToken
 
 在[开放平台](https://open.anyweb.cc)注册并登录账号后，创建完成应用后，可以获取到 `appid` 和 `secret` 两个字段。

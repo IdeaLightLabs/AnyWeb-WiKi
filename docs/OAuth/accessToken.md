@@ -8,6 +8,12 @@ AccessToken 是用户授权后的凭证，用于调用其他 OAuth API。
 
 ## 具体过程
 
+:::caution 注意
+
+请使用 json 格式提交请求。
+
+:::
+
 ### 获取授权
 
 > 注意：下述为 Conflux 链例子，其他链同理。
@@ -160,12 +166,12 @@ public class main {
 
 #### 返回值
 
-| 参数名          | 类型     | 备注                                  |
-|--------------|--------|-------------------------------------|
-| token        | String | 换取到的 `accessToken`                  |
-| expire       | Number | `accessToken` 有效时间                  |
-| refreshToken | Number | 用于更新 `accessToken` 的 `refreshToken` |
-| expiresIn    | Number | `refreshToken` 过期时间戳                |
+| 参数名           | 类型     | 备注                                  |
+|---------------|--------|-------------------------------------|
+| token         | String | 换取到的 `accessToken`                  |
+| expire        | Number | `accessToken` 有效时间（秒）               |
+| refreshToken  | Number | 用于更新 `accessToken` 的 `refreshToken` |
+| refreshExpire | Number | `refreshToken` 有效时间（秒）              |
 
 ```json
 {
@@ -173,8 +179,9 @@ public class main {
   "message": "success",
   "data": {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX1hZjMyLWUxMDYwZGUwN2Q4MCIsImFwcGlkIjoiMWQxNDdjMDctNjM5Zi00YWI0LWFiNDktNzNkMWQ4OTkwOTk5IiwiaXNSZWZyZXNoIjpmYWxzZSwiaWF0IjoxNjXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.zKKYZcNTZ-PMSW6OgpIomai5IU1ehDYgxDw90RU8rRs",
+    "expire": 7200,
     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXQtYWYzMi1lMTA2MGRlMDdkODAiLCJhcHBpZCI6IjFkMTQ3YzA3LTYzOWYtNGFiNC1hYjQ5LTczZDFkODk5MDk5OSIsImlzUmVmcmVzaCI6dHJ1ZSwiaWF0IjoxNjXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.fHm7xf9CWAXbN3rlJ83ExAC1aW9kmK-N6FyvyqcYumA",
-    "refreshExpiresIn": 2592000
+    "refreshExpire": 1296000
   }
 }
 ```
