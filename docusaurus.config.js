@@ -7,6 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'AnyWeb Wiki',
+    titleDelimiter: '-',
     tagline: '强合规的区块链钱包',
     url: 'https://wiki.anyweb.cc',
     baseUrl: '/',
@@ -19,6 +20,7 @@ const config = {
     presets: [['classic', /** @type {import('@docusaurus/preset-classic').Options} */
         ({
             docs: {
+                routeBasePath: '/', // doc only mode
                 sidebarPath: require.resolve('./sidebars.js'), // Please change this to your repo.
                 editUrl: 'https://github.com/IdeaLightLabs/AnyWeb-WiKi/blob/master',
             }, blog: {
@@ -71,12 +73,12 @@ const config = {
                 // searchParameters: {},
 
                 //... other Algolia params
-            }, navbar: {
+            },
+
+            navbar: {
                 title: 'AnyWeb 开发文档', logo: {
                     alt: 'My Site Logo', src: 'img/logo.svg', width: 17
                 }, items: [{
-                    type: 'doc', docId: 'SDK/intro', position: 'left', label: '文档',
-                }, {
                     href: 'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK/issues', label: '反馈', position: 'left'
                 }, {
                     href: 'https://github.com/IdeaLightLabs/AnyWeb-JS-SDK', label: 'GitHub', position: 'right',
