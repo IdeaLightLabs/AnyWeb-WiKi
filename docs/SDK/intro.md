@@ -1,6 +1,6 @@
 # AnyWeb JS SDK 介绍
 
-AnyWeb JS SDK 是为 [AnyWeb](https://wiki.anyweb.cc/docs/anyweb/) 开发的SDK，提供了一套简单的API，方便开发者快速将 Dapp 接入到 AnyWeb 中实现便捷的钱包服务。
+AnyWeb JS SDK 是为 [AnyWeb](https://wiki.anyweb.cc/anyweb/) 开发的SDK，提供了一套简单的API，方便开发者快速将 Dapp 接入到 AnyWeb 中实现便捷的钱包服务。
 
 Features:
 
@@ -22,21 +22,21 @@ Features:
 
 ## Docs
 
-* [AnyWeb 介绍](https://wiki.anyweb.cc/docs/AnyWeb/into)
+* [AnyWeb 介绍](https://wiki.anyweb.cc/AnyWeb/into)
 * [SDK](https://wiki.anyweb.cc/SDK/intro)
-    * [SDK 介绍](https://wiki.anyweb.cc/docs/SDK/intro)
-    * [SDK 快速开始](https://wiki.anyweb.cc/docs/SDK/quick_start)
-    * [SDK 用法](https://wiki.anyweb.cc/docs/SDK/usage)
-    * [SDK 错误码](https://wiki.anyweb.cc/docs/SDK/errorCode)
-    * [更新日志](https://wiki.anyweb.cc/docs/SDK/CHANGELOG)
-    * [OAuth 接口](https://wiki.anyweb.cc/docs/SDK/OAuth/intro)
-        * [OAuth 接口介绍](https://wiki.anyweb.cc/docs/SDK/OAuth/intro)
-        * [accessToken 获取](https://wiki.anyweb.cc/docs/SDK/OAuth/accessToken)
-        * [用户信息获取](https://wiki.anyweb.cc/docs/SDK/OAuth/userInfo)
-* [服务端能力](https://wiki.anyweb.cc/docs/Service/intro)
-    * [服务端能力介绍](https://wiki.anyweb.cc/docs/Service/intro)
-    * [serviceToken 获取](https://wiki.anyweb.cc/docs/Service/serviceToken)
-    * [批量检查地址](https://wiki.anyweb.cc/docs/Service/checkAddresses)
+    * [SDK 介绍](https://wiki.anyweb.cc/SDK/intro)
+    * [SDK 快速开始](https://wiki.anyweb.cc/SDK/quick_start)
+    * [SDK 用法](https://wiki.anyweb.cc/SDK/usage)
+    * [SDK 错误码](https://wiki.anyweb.cc/SDK/errorCode)
+    * [更新日志](https://wiki.anyweb.cc/SDK/CHANGELOG)
+    * [OAuth 接口](https://wiki.anyweb.cc/SDK/OAuth/intro)
+        * [OAuth 接口介绍](https://wiki.anyweb.cc/SDK/OAuth/intro)
+        * [accessToken 获取](https://wiki.anyweb.cc/SDK/OAuth/accessToken)
+        * [用户信息获取](https://wiki.anyweb.cc/SDK/OAuth/userInfo)
+* [服务端能力](https://wiki.anyweb.cc/Service/intro)
+    * [服务端能力介绍](https://wiki.anyweb.cc/Service/intro)
+    * [serviceToken 获取](https://wiki.anyweb.cc/Service/serviceToken)
+    * [批量检查地址](https://wiki.anyweb.cc/Service/checkAddresses)
 
 前往[ 官网文档 ](https://wiki.anyweb.cc)了解更多
 
