@@ -30,6 +30,9 @@ const config = {
             ),],],
         themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
             ({
+                colorMode: {
+                    respectPrefersColorScheme: true
+                },
                 /* algolia: {
                      // The application ID provided by Algolia
                      appId: 'YOUR_APP_ID',
