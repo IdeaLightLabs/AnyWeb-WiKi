@@ -40,13 +40,14 @@ AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请�
 
 #### 返回值
 
-| 键名      | 类型     | 说明                                                         |
-| --------- | -------- | ------------------------------------------------------------ |
-| code      | String   | 用于换取 OAuth 的 accessToken, 失效时间 5 分钟               |
-| address   | String[] | 地址列表                                                     |
-| networkId | Number   | 用户选择对 DApp 授权的区块链网络ID                           |
+| 键名        | 类型     | 说明                                                            |
+|-----------| -------- |---------------------------------------------------------------|
+| code      | String   | 用于换取 OAuth 的 accessToken, 失效时间 5 分钟                           |
+| address   | String[] | 地址列表                                                          |
+| networkId | Number   | 用户选择对 DApp 授权的区块链网络ID                                         |
 | chainId   | Number   | 用户选择对 DApp 授权的区块链（目前仅支持 Conflux 链， Conflux 链 `chainId` 为 `1`） |
-| scope     | String[] | 获取到的授权类型                                             |
+| scope     | String[] | 获取到的授权类型                                                      |
+| phone     | String   | 用户手机号(选填)，可以跳过输入手机号的页面，直接进入输入验证码页面                            |                                                    |
 
 ```json
 {
