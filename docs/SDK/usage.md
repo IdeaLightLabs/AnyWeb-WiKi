@@ -20,7 +20,7 @@ AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请�
 | cfx_signTypedData    | 发起 Conflux 签名                |
 | anyweb_importAccount | 将账户地址导入 AnyWeb 中             |
 | anyweb_identify      | 跳转到 AnyWeb 进行实名认证            |
-| anyweb_revoke        | 解除钱包账户授权 (推荐 1.2.2后支持)       |
+| anyweb_revoke        | 解除钱包账户授权      |
 | anyweb_logout        | 退出登录                         |
 | anyweb_version       | 获取 AnyWeb JS-SDK 版本          |
 | anyweb_home          | 启动 AnyWeb 首页                 |
