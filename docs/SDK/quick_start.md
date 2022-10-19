@@ -43,7 +43,7 @@ AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请�
 import {Provider} from '@idealight-labs/anyweb-js-sdk';
 
 const provider = new Provider({
-    logger: console,
+    logger: console, // SDK 的 logger
     appId: '从open.anyweb.cc拿到的AppId',
 })
 ```
@@ -55,11 +55,11 @@ const provider = new Provider({
 ```html
 
 <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@idealight-labs/anyweb-js-sdk@1.3.2/dist/anyweb-js-sdk.umd.min.js"></script>
+        src="https://cdn.jsdelivr.net/npm/@idealight-labs/anyweb-js-sdk@1.3.3/dist/anyweb-js-sdk.umd.min.js"></script>
 
 <script type="text/javascript">
     const provider = new window.AnyWeb.Provider({
-        logger: console,
+        logger: console, // SDK 的 logger
         appId: '从open.anyweb.cc拿到的AppId'
     })
 </script>

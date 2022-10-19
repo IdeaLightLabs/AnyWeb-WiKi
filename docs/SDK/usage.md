@@ -13,19 +13,18 @@ AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请�
 
 ### Provider API提供的功能
 
-| method               | 说明                                                |
-| -------------------- | --------------------------------------------------- |
-| cfx_accounts         | 获取 Conflux 账户授权                               |
-| cfx_sendTransaction  | 发起 Conflux 合约调用                               |
-| cfx_signTypedData    | 发起 Conflux 签名       |
-| anyweb_importAccount | 将账户地址导入 AnyWeb 中                            |
-| anyweb_identify      | 跳转到 AnyWeb 进行实名认证                          |
-| exit_accounts        | 取消钱包账户授权 (不推荐将废弃, 目前全版本暂时兼容) |
-| anyweb_revoke        | 取消钱包账户授权 (推荐 1.2.2后支持)                 |
-| anyweb_logout        | 退出登录                                            |
-| anyweb_version       | 获取 AnyWeb JS-SDK 版本                             |
-| anyweb_home          | 启动 AnyWeb 首页                                    |
-| anyweb_loginstate    | 判断 AnyWeb 用户是否登录                            |
+| method               | 说明                           |
+| -------------------- |------------------------------|
+| cfx_accounts         | 获取 Conflux 账户授权              |
+| cfx_sendTransaction  | 发起 Conflux 合约调用              |
+| cfx_signTypedData    | 发起 Conflux 签名                |
+| anyweb_importAccount | 将账户地址导入 AnyWeb 中             |
+| anyweb_identify      | 跳转到 AnyWeb 进行实名认证            |
+| anyweb_revoke        | 解除钱包账户授权 (推荐 1.2.2后支持)       |
+| anyweb_logout        | 退出登录                         |
+| anyweb_version       | 获取 AnyWeb JS-SDK 版本          |
+| anyweb_home          | 启动 AnyWeb 首页                 |
+| anyweb_loginstate    | 判断 AnyWeb 用户是否登录             |
 
 ### 获取授权 `cfx_accounts`
 
@@ -33,7 +32,7 @@ AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请�
 
 #### 参数
 
-* `availableNetwork`: 限定用户可以选择的区块链网络ID 如`[1,1029]`(在 Conflux 中 1029 为主网络、1 为测试网)。那么用户只能选择在指定的网络中进行授权。
+* `availableNetwork`: 限定用户可以选择的区块链网络 ID 列表，如 `[1,1029]` (在 Conflux 中 1029 为主网络、1 为测试网)，用户只能在指定的网络列表中进行选择和授权。
 * `scopes`: 指定请求的授权的信息，有以下可选值：
     * `baseInfo`: 获取基本信息，`unionid` `addresses`字段 地址检查功能等。
     * `identity`: 授权获取手机号等信息。
@@ -112,7 +111,12 @@ provider.request({
 
 :::
 
-### 取消授权 `exit_accounts`
+### 解除授权 `anyweb_revoke`
+
+在 DApp 获取到用户授权后，如果需要重新获取用户授权或者解除用户授权，可以调用 `anyweb_revoke` 以解除授权。
+
+解除授权后，需要重新调用 `cfx_accounts` 才能再次获取授权。
+
 
 #### 参数
 
@@ -137,14 +141,13 @@ provider.request({
 
 #### 实例
 
-取消授权后，会跳转到 AnyWeb 进行取消。取消成功后会自动返回DApp。
 
 ```javascript
 /**
- * 取消授权
+ * 解除授权
  */
 provider.request({
-    method: 'exit_accounts'
+    method: 'anyweb_revoke'
 }).then(() => {
     // 后续操作
 }).catch((e) => {
@@ -475,7 +478,7 @@ provider.request({
 
 ```javascript
 const provider = new Provider({
-    logger: console,
+    logger: console, // SDK 的 logger
     appId: '从open.anyweb.cc拿到的AppId',
 })
 provider.on('ready', () => {
