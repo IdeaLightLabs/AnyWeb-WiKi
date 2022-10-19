@@ -26,11 +26,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 ❗️计费统计规则说明：
 
-一次完整的计费流程需要依次满足以下2个条件，其中一条不满足都不会进行计费：
-
-* 调用 `cfx_accounts` 功能，在 AnyWeb 发送登录验证码短信并且成功登录后，获取 code。
-
-* 使用上一步获取的 code ，并调用 OAuth 的 accessToken 接口，获取 accessToken。
+* 调用 `cfx_accounts` 功能，在 AnyWeb 发送登录验证码短信成功后，会进行一次计费。其他场景下不会计费。
 
 #### 服务定价
 |     | 每月使用量≤1000 | 每月使用量>1000 |
