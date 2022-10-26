@@ -2,7 +2,8 @@
 
 :::info 提示
 
-AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请在页面初始化时实例化 `Provider` 并且立即调用 `on('ready', function)` 方法来设置 SDK
+AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请在页面初始化时实例化 `Provider`
+并且立即调用 `on('ready', function)` 方法来设置 SDK
 初始化完成的回调，请勿在 SDK 初始化完成前调用任何 SDK 方法。
 
 同时 `Provider` 也提供了静态属性 `Provider.ready` 用于判断 SDK 是否初始化完成，请结合项目需求使用。
@@ -32,7 +33,8 @@ AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请�
 
 #### 参数
 
-* `availableNetwork`: 限定用户可以选择的区块链网络 ID 列表，如 `[1,1029]` (在 Conflux 中 1029 为主网络、1 为测试网)，用户只能在指定的网络列表中进行选择和授权。
+* `availableNetwork`: 限定用户可以选择的区块链网络 ID 列表，如 `[1,1029]` (在 Conflux 中 1029 为主网络、1 为测试网)
+  ，用户只能在指定的网络列表中进行选择和授权。
 * `scopes`: 指定请求的授权的信息，有以下可选值：
     * `baseInfo`: 获取基本信息，`unionid` `addresses`字段 地址检查功能等。
     * `identity`: 授权获取手机号等信息。
@@ -106,7 +108,8 @@ provider.request({
 
 用户首次授权时，会跳转到 AnyWeb 的授权页面，用户点击授权后，会返回 `code` 等数据。 再次调用时该接口时：
 
-- 如果用户已授权的网络ID不在`availableNetwork`内，或 `scopes` 超越了用户已授权的范围，则会提示用户重新授权，若授权成功则会返回新的 `code` 及其他参数。
+- 如果用户已授权的网络ID不在`availableNetwork`内，或 `scopes`
+  超越了用户已授权的范围，则会提示用户重新授权，若授权成功则会返回新的 `code` 及其他参数。
 - 如果请求参数与上一次相同，则会直接返回新的 `code` 及其他参数。
 
 :::
@@ -116,7 +119,6 @@ provider.request({
 在 DApp 获取到用户授权后，如果需要重新获取用户授权或者解除用户授权，可以调用 `anyweb_revoke` 以解除授权。
 
 解除授权后，需要重新调用 `cfx_accounts` 才能再次获取授权。
-
 
 #### 参数
 
@@ -141,7 +143,6 @@ provider.request({
 
 #### 实例
 
-
 ```javascript
 /**
  * 解除授权
@@ -157,7 +158,8 @@ provider.request({
 
 ### 实名认证 `anyweb_identify`
 
-一些场景下需要用户的实名信息，可以先通过 [用户信息获取](https://wiki.anyweb.cc/docs/OAuth/userInfo) 接口尝试获取用户实名信息。如果用户未进行实名认证，可通过以下代码跳转到 AnyWeb
+一些场景下需要用户的实名信息，可以先通过 [用户信息获取](https://wiki.anyweb.cc/docs/OAuth/userInfo)
+接口尝试获取用户实名信息。如果用户未进行实名认证，可通过以下代码跳转到 AnyWeb
 进行实名认证。认证成功后可再次尝试通过 [用户信息获取](https://wiki.anyweb.cc/docs/OAuth/userInfo) 接口获取实名认证信息。
 
 #### 参数
@@ -240,7 +242,8 @@ provider.request({
 
 :::info 参考文档
 
-Conflux 交易发送失败的常见错误及原因: [http://wiki.conflux123.xyz/books/faqs/chapter/96da2](http://wiki.conflux123.xyz/books/faqs/chapter/96da2)
+Conflux
+交易发送失败的常见错误及原因: [http://wiki.conflux123.xyz/books/faqs/chapter/96da2](http://wiki.conflux123.xyz/books/faqs/chapter/96da2)
 
 :::
 
@@ -273,9 +276,11 @@ provider.request({
 
 :::info 参考文档
 
-Conflux sign 官方文档: [https://docs.confluxnetwork.org/js-conflux-sdk/docs/sign_methods](https://docs.confluxnetwork.org/js-conflux-sdk/docs/sign_methods)
+Conflux sign
+官方文档: [https://docs.confluxnetwork.org/js-conflux-sdk/docs/sign_methods](https://docs.confluxnetwork.org/js-conflux-sdk/docs/sign_methods)
 
-CIP-23 标准: [https://github.com/Conflux-Chain/CIPs/blob/2d9fdbdb08f66f705348669a6cd85e2d53509e97/CIPs/cip-23.md](https://github.com/Conflux-Chain/CIPs/blob/2d9fdbdb08f66f705348669a6cd85e2d53509e97/CIPs/cip-23.md)
+CIP-23
+标准: [https://github.com/Conflux-Chain/CIPs/blob/2d9fdbdb08f66f705348669a6cd85e2d53509e97/CIPs/cip-23.md](https://github.com/Conflux-Chain/CIPs/blob/2d9fdbdb08f66f705348669a6cd85e2d53509e97/CIPs/cip-23.md)
 :::
 
 `params` 参数：
@@ -478,7 +483,7 @@ provider.request({
 
 ```javascript
 const provider = new Provider({
-    logger: console, // SDK 的 logger
+    logger: console, // SDK 的 logger, 设置为 null 可关闭 SDK 的日志
     appId: '从open.anyweb.cc拿到的AppId',
 })
 provider.on('ready', () => {
