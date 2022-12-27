@@ -14,18 +14,19 @@ AnyWeb JS SDK的 `Provider` 在 `1.2.0` 后被修改为单例模式，因此请�
 
 ### Provider API提供的功能
 
-| method               | 说明                           |
-| -------------------- |------------------------------|
-| cfx_accounts         | 获取 Conflux 账户授权              |
-| cfx_sendTransaction  | 发起 Conflux 合约调用              |
-| cfx_signTypedData    | 发起 Conflux 签名                |
-| anyweb_importAccount | 将账户地址导入 AnyWeb 中             |
-| anyweb_identify      | 跳转到 AnyWeb 进行实名认证            |
-| anyweb_revoke        | 解除钱包账户授权      |
-| anyweb_logout        | 退出登录                         |
-| anyweb_version       | 获取 AnyWeb JS-SDK 版本          |
-| anyweb_home          | 启动 AnyWeb 首页                 |
-| anyweb_loginstate    | 判断 AnyWeb 用户是否登录             |
+| method               | 说明                          |
+|----------------------|-----------------------------|
+| cfx_accounts         | 获取 Conflux 账户授权             |
+| cfx_sendTransaction  | 发起 Conflux 合约调用             |
+| cfx_signTypedData    | 发起 Conflux 签名               |
+| cfx_personalSign     | 发起 Conflux personal_sign 签名 |
+| anyweb_importAccount | 将账户地址导入 AnyWeb 中            |
+| anyweb_identify      | 跳转到 AnyWeb 进行实名认证           |
+| anyweb_revoke        | 解除钱包账户授权                    |
+| anyweb_logout        | 退出登录                        |
+| anyweb_version       | 获取 AnyWeb JS-SDK 版本         |
+| anyweb_home          | 启动 AnyWeb 首页                |
+| anyweb_loginstate    | 判断 AnyWeb 用户是否登录            |
 
 ### 获取授权 `cfx_accounts`
 
@@ -269,7 +270,7 @@ provider.request({
 })
 ```
 
-### 签名
+### 签名(推荐)
 
 部分场景下需要获取用户签名时，通过调用 `cfx_signTypedData` 可获得签名。
 
@@ -313,6 +314,44 @@ const from = 'cfxtest:aan5d7p1y1j3gkn3v3wgref76ae69kx81y1b5uckjz' // 发起签�
 const data = JSON.stringify({...})   // CIP-23 标准格式数据
 provider.request({
     method: 'cfx_signTypedData', params: [from, data, false]
+}).then((result) => {
+    console.log("调用结果", result)
+}).catch((e) => {
+    console.error('调用失败', e)
+})
+```
+### cfx_personalSign 签名
+
+部分场景下需要获取用户签名时，通过调用 `cfx_personalSign` 可获得 personal_sign 签名。
+
+:::info 参考文档
+
+Conflux sign
+官方文档: [https://docs.confluxnetwork.org/js-conflux-sdk/docs/sign_methods?q=personal_sign](https://docs.confluxnetwork.org/js-conflux-sdk/docs/sign_methods?q=personal_sign)
+
+:::
+
+`params` 参数：
+
+| index | 类型      | 默认值   | 说明                          |
+|-------|---------|-------|-----------------------------|
+| 0     | String  | 无     | 对 `message` 签名的区块链账户地址      |
+| 1     | String  | 无     | `message` |
+
+返回值：
+
+| 类型     | 说明        |
+|--------|-----------|
+| String | 十六进制格式的签名 |
+
+```javascript
+/**
+ * 签名
+ */
+const from = 'cfxtest:aan5d7p1y1j3gkn3v3wgref76ae69kx81y1b5uckjz' // 发起签名的账户地址
+const data = '0x123'
+provider.request({
+    method: 'cfx_personalSign', params: [from, data]
 }).then((result) => {
     console.log("调用结果", result)
 }).catch((e) => {
